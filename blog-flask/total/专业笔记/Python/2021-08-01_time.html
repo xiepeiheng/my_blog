@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_time</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="引入">引入</h2>
+<p>这个包python自带，直接引入即可</p>
+<pre><code>import time</code></pre>
+<p>这个包在处理时间的时候不能直接处理时间字符串比如<code>2021-08-04</code>这种，而是要先由<code>time.strptime()</code>方法转换为<code>&lt;class &#39;time.struct_time&#39;&gt;</code>对象（下称对象）后进行处理</p>
+<h2 id="python中的日期格式化符号">Python中的日期格式化符号</h2>
+<ul>
+<li>%y 两位数的年份表示（00-99）</li>
+<li>%Y 四位数的年份表示（000-9999）</li>
+<li>%m 月份（01-12）</li>
+<li>%d 月内中的一天（0-31）</li>
+<li>%H 24小时制小时数（0-23）</li>
+<li>%I 12小时制小时数（01-12）</li>
+<li>%M 分钟数（00=59）</li>
+<li>%S 秒（00-59）</li>
+<li>%a 本地简化星期名称</li>
+<li>%A 本地完整星期名称</li>
+<li>%b 本地简化的月份名称</li>
+<li>%B 本地完整的月份名称</li>
+<li>%c 本地相应的日期表示和时间表示</li>
+<li>%j 年内的一天（001-366）</li>
+<li>%p 本地A.M.或P.M.的等价符</li>
+<li>%U 一年中的星期数（00-53）星期天为星期的开始</li>
+<li><font color="red"><strong>%w 星期（0-6），星期天为星期的开始</strong></font></li>
+<li>%W 一年中的星期数（00-53）星期一为星期的开始</li>
+<li>%x 本地相应的日期表示</li>
+<li>%X 本地相应的时间表示</li>
+<li>%Z 当前时区的名称</li>
+<li>%% %号本身</li>
+</ul>
+<p>注意</p>
+<ol type="1">
+<li>“%p”只有与“%I”配合使用才有效果</li>
+<li>秒（%S）的表示范围是0 - 61，而不是59，闰年秒占两秒（说法有冲突</li>
+<li>当使用strptime()函数时，只有当在这年中的周数和天数被确定的时候%U和%W才会被计算</li>
+</ol>
+<h2 id="python时间表示概述">Python时间表示概述</h2>
+<p>通常使用三种方式来表示时间</p>
+<ol type="1">
+<li>时间戳：表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。使用<code>time.time()</code>获取当前时间戳后会返回浮点数</li>
+<li>格式化时间字符串，即上文提到的格式化符号</li>
+<li>上文提到的对象</li>
+</ol>
+<h2 id="time.localtime">time.localtime()</h2>
+<p>获取本地当前时间的数据，会返回对象，可从该对象中提取想要的数值</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(time.localtime()))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time.localtime())</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time.localtime()[<span class="dv">2</span>])</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">-----</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;time.struct_time&#39;</span><span class="op">&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>time.struct_time(tm_year<span class="op">=</span><span class="dv">2021</span>, tm_mon<span class="op">=</span><span class="dv">8</span>, tm_mday<span class="op">=</span><span class="dv">4</span>, tm_hour<span class="op">=</span><span class="dv">16</span>, tm_min<span class="op">=</span><span class="dv">45</span>, tm_sec<span class="op">=</span><span class="dv">0</span>, tm_wday<span class="op">=</span><span class="dv">2</span>, tm_yday<span class="op">=</span><span class="dv">216</span>, tm_isdst<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span></span></code></pre></div>
+<h2 id="time.strptime-time.strftime">time.strptime() / time.strftime()</h2>
+<p>分别是将字符串形式的日期转换为对象和将对象转换为字符串</p>
+<p>虽然转换为对象时只提供了三个数值，但是生成的对象会自动填补其他值（比如将时分秒都设为零）。所以在转换为字符串时可以随意使用日期格式化符号得到想要的结果</p>
+<pre><code>cmy1 = time.strptime(&quot;2021-08-04&quot;, &quot;%Y-%m-%d&quot;)
+print(cmy1)
+cmy2 = time.strftime(&quot;%A&quot;, cmy1)
+print(cmy2)
+-----
+time.struct_time(tm_year=2021, tm_mon=8, tm_mday=4, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=2, tm_yday=216, tm_isdst=-1)
+Wednesday</code></pre>
+<h2 id="time.time-time.localtime">time.time() / time.localtime()</h2>
+<p>返回本地当前时间的时间戳，将一个时间戳按照本地时区的格式返回，将一个时间戳按照UTC（协调世界时）的格式返回</p>
+<pre><code>print(time.time())
+print(time.localtime(1628070402.908749))
+print(time.gmtime(1628070402.908749))
+-----
+1628070402.908749
+time.struct_time(tm_year=2021, tm_mon=8, tm_mday=4, tm_hour=17, tm_min=46, tm_sec=42, tm_wday=2, tm_yday=216, tm_isdst=0)
+time.struct_time(tm_year=2021, tm_mon=8, tm_mday=4, tm_hour=9, tm_min=46, tm_sec=42, tm_wday=2, tm_yday=216, tm_isdst=0)</code></pre>
+<h2 id="time.mktime">time.mktime()</h2>
+<p>将一个对象转化为时间戳</p>
+<p>案例略</p>
+</body>
+</html>

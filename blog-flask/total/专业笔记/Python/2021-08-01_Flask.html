@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_Flask</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="flask笔记">flask笔记</h1>
+<h2 id="基本名词">基本名词</h2>
+<h3 id="wsgi">WSGI</h3>
+<p>WSGI（Web Server Gateway Interface）是Python中用来规定Web服务器如何与Python Web程序进行沟通的标准</p>
+<h3 id="pypi">PyPI</h3>
+<p>PyPI是一个Python包的在线仓库，截至2018年5月，共有13万多个包存储在这里</p>
+<h3 id="pipenv">Pipenv</h3>
+<p>Pipenv是基于pip的Python包管理工具，它和pip的用法非常相似，可以看作pip的加强版，它的出现解决了旧的pip+virtualenv+requirements.txt的工作方式的弊端。具体来说，它是pip、Pipfile和Virtualenv的结合体，它让包安装、包依赖管理和虚拟环境管理更加方便，使用它可以实现高效的Python项目开发工作流</p>
+<p>详细使用方法见<code>pipenv.md</code>文件</p>
+<h2 id="flask基础知识">Flask基础知识</h2>
+<h3 id="基本写法">基本写法</h3>
+<pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def index():
+    return &#39;&lt;h1&gt;Hello Flask!&lt;/h1&gt;&#39;</code></pre>
+<p>先从flask包导入Flask类</p>
+<p>再实例化这个类，来得到程序实例<code>app</code>，随后就可以调用这个实例的各种方法了</p>
+<h3 id="路由">路由</h3>
+<p>为函数附加<code>@app.route()</code>装饰器，并写入URL，就可以在URL和index()之间建立联系。这个过程称为注册路由。此时<code>index()</code>称为视图函数</p>
+<pre><code>@app.route(&#39;/&#39;)
+def index():
+    return &#39;&lt;h1&gt;Hello, World!&lt;/h1&gt;&#39;</code></pre>
+<p>同一个视图函数可以绑定多个路由</p>
+<pre><code>@app.route(&#39;/1&#39;)
+@app.route(&#39;/2&#39;)
+def index():
+    return &#39;&lt;h1&gt;Hello, World!&lt;/h1&gt;&#39;</code></pre>
+<p>在URL中添加变量来向视图函数传递参数</p>
+<pre><code>@app.route(&#39;/greet/&lt;name&gt;&#39;)
+def greet(name):
+    return &#39;&lt;h1&gt;Hello, %s!&lt;/h1&gt;&#39; % name</code></pre>
+<p>假设一个场景，通过URL传递用户的数据，但是用户第一次打开网页时没有数据(比如用户打开了/greet)，所以设置默认数据为<code>Programmer</code></p>
+<pre><code>@app.route(&#39;/greet&#39;)
+@app.route(&#39;/greet/&lt;name&gt;&#39;)
+def greet(name=&#39;Programmer&#39;):
+    return &#39;&lt;h1&gt;Hello, %s!&lt;/h1&gt;&#39; % name</code></pre>
+<h3 id="启动开发服务器">启动开发服务器</h3>
+<p>详见书中内容，包括了在局域网和公网上启动的内容</p>
+<h3 id="配置项">配置项</h3>
+<p>部分拓展需要读取配置项进行操作。注意，配置项必须全大写</p>
+<pre><code>app.config.update(
+    TESTING=True,
+    SECRET_KEY=&#39;_5#yF4Q8z\n\xec]/&#39;
+)</code></pre>
+<h3 id="url_for">url_for</h3>
+<p>在修改了某个路由中URL的值的话，如果视图函数中的URL是写死的话就需要一个个修改，很麻烦。所以使用该函数在视图函数内部获取该函数的URL的值</p>
+<pre><code>@app.route(&#39;/&#39;)
+def index():
+    print(url_for(&#39;index&#39;))
+    return &#39;Hello Flask!&#39;</code></pre>
+<p>比如在这个函数中，会打印出来<code>&#39;/&#39;</code>，因为视图函数<code>index()</code>的URL为<code>&#39;/&#39;</code></p>
+<p>如果URL中含有动态参数，那么采用<code>url_for(&#39;greet&#39;，name=&#39;Jack&#39;)</code>获取到<code>/hello/Jack</code></p>
+<pre><code>@app.route(&#39;/hello/&lt;name&gt;&#39;)
+def greet(name):
+    return &#39;Hello %s!&#39; % name</code></pre>
+<p>’以上方法都只能获得供函数内部使用的相对URL，如果要获得绝对地址，需要<code>url_for(&#39;greet&#39;，name=&#39;Jack&#39;, _external = True)</code></p>
+<p>但请注意，如果注册了蓝图的话就需要写<code>蓝图名称.视图函数名称</code>。好在犯了这个错误的话报错会提示你信息</p>
+<h3 id="redirect">redirect</h3>
+<p>重定向</p>
+<h2 id="static_folder">static_folder</h2>
+<h2 id="cdn">CDN</h2>
+<p>CDN指分布式服务器系统。服务商把你需要的资源存储在分布于不同地理位置的多个服务器，它会根据用户的地理位置来就近分配服务器提供服务（服务器越近，资源传送就越快）。使用CDN服务可以加快网页资源的加载速度，从而优化用户体验。对于开源的CSS和JavaScript库，CDN提供商通常会免费提供服务</p>
+<h2 id="orm">ORM</h2>
+<p>在pthon中可能会连接各种各样的数据库。除此之外，在<code>app.py</code>中直接写查询语句会使得页面不美观。因此，为了实现简便的写<code>sql</code>语句，以及不用每换一个数据库就要更改语句，所以有了<code>Flask-SQLAlchemy</code>这个库</p>
+<p>使用这个库特有的语法来简单的写查询语句，并且从一个数据库更换为其它主流数据库均无需重写语句</p>
+<p>但我还没搞清楚如何配置这个东西</p>
+<h2 id="蓝图">蓝图</h2>
+<p>通过蓝图可以把一部分路由注册在别的文件夹中，防止都注册在<code>app.py</code>导致变得臃肿</p>
+<p>文件结构如下</p>
+<pre><code>│  view.py
+│  
+├─templates
+│  │  index.html
+│  │  
+│  └─admin
+│          index.html
+│          
+└─view
+        admin.py
+        user.py
+        __init__.py</code></pre>
+<p>将几个路由注册在<code>view</code>文件夹中的两个文件中。注意如果想让文件夹中的文件变为可被引用的模块，需要在文件夹中新建<code>__init__.py</code>文件，里面什么都不写</p>
+<p><code>view.py</code>内容如下</p>
+<pre><code>from flask import Flask,request,render_template
+from view.admin import _admin
+from view.user import _user
+
+app=Flask(__name__)
+app.register_blueprint(_admin)
+app.register_blueprint(_user)
+if __name__ == &#39;__main__&#39;:
+    app.run(debug=&#39;on&#39;)</code></pre>
+<p>首先从文件夹中引入已经注册好的两个蓝图</p>
+<p>然后再分别进行注册</p>
+<p>两个蓝图文件如下</p>
+<p><code>user.py</code></p>
+<pre><code>from flask import Blueprint, render_template, redirect
+_user = Blueprint(&#39;user&#39;,__name__,url_prefix=&#39;/0&#39;)
+ 
+@_user.route(&#39;/index&#39;)
+def index():
+    return render_template(&#39;index.html&#39;)
+@_user.route(&#39;/add&#39;)
+def add():
+    return &#39;user_add&#39;
+@_user.route(&#39;/show&#39;)
+def show():
+    return &#39;user_show&#39;</code></pre>
+<p><code>admin.py</code></p>
+<pre><code>from flask import Blueprint,render_template, request
+_admin = Blueprint(&#39;admin&#39;,__name__,url_prefix=&#39;/1&#39;)
+ 
+@_admin.route(&#39;/index&#39;)
+def index():
+    return render_template(&#39;admin/index.html&#39;)
+@_admin.route(&#39;/add&#39;)
+def add():
+    return &#39;admin_add&#39;
+@_admin.route(&#39;/show&#39;)
+def show():
+    return &#39;admin_show&#39;</code></pre>
+<p><code>url_prefix=&#39;/1&#39;</code>指的是在实际输入网址时需要加上这部分内容才能找到。如果值为<code>/</code>的话就什么都不加。输入<code>http://127.0.0.1:5000/1/index</code>才能找到<code>@admin.route(&#39;/index&#39;)</code>网页</p>
+<p>注意，蓝图的名字前最好加上短横线，否则可能会报错<code>&#39;function&#39; object has no attribute &#39;name&#39;</code></p>
+<p><strong>蓝图进阶</strong></p>
+<p>可以通过蓝图来划定每个蓝图对应的模板文件夹和静态资源文件夹的位置。这样可以把这个蓝图所对应的网页资源放在一起而不用分别放入两个文件夹中。</p>
+<p>样例：</p>
+<p>文件目录如下</p>
+<pre><code>大学毕业
+|
+|--graduation.py
+|
+|--graduation.html
+|
+|--css.css
+|
+|--__init__.py
+|
+|--img</code></pre>
+<p><code>graduation.py</code>是蓝图文件，内容如下</p>
+<pre><code>_graduation = Blueprint(&#39;graduation&#39;, __name__, url_prefix=&#39;/graduation&#39;,
+                        static_url_path=&#39;&#39;,
+                        static_folder=&#39;.&#39;,
+                        template_folder=&#39;.&#39;,
+                        )
+
+
+@_graduation.route(&#39;/&#39;)
+def graduation():
+    return render_template(&#39;graduation.html&#39;)</code></pre>
+<p>蓝图的模板文件夹和静态资源文件夹的路径均为相对于蓝图位置的相对路径。所以可以看到两个文件夹均被设置为<code>&#39;.&#39;</code>。<code>static_url_path</code>无论何时都应该被设置为空字符串，这其中的原因不明，但这么做就对了</p>
+<p><code>url_prefix</code>不允许所有蓝图都是一样的的，应该错开</p>
+<p>在实例中注册的时候需要写全从实例所处的位置到蓝图所处的位置的完整路径</p>
+<pre><code>from total.特设网页.大学毕业.graduation import _graduation
+app.register_blueprint(_graduation)</code></pre>
+<p>实例自身也可以这样设置来改变默认的文件夹的名称和路径</p>
+<pre><code>app = Flask(
+    __name__,
+    static_url_path=&#39;&#39;,
+    static_folder=&#39;static&#39;,
+    template_folder=&#39;.&#39;
+)</code></pre>
+<h2 id="上下文与全局变量">上下文与全局变量</h2>
+<p><strong>如何理解</strong></p>
+<p>如前文所说，在数据通过<code>GET</code>传回服务器后，可以用如下方法读取数据</p>
+<pre><code>start_time = request.values.get(&quot;a&quot;)</code></pre>
+<p>这里的request是请求上下文的变量，每当收到新的请求，其所代表的值就会改变，当请求结束后就被销毁，再有新的请求时就代表新的值</p>
+<p>一共有四种上下文变量</p>
+<p><strong>current_app</strong></p>
+<p>属于应用上下文，声明之后在整个实例范围内可用</p>
+<p>需要引入<code>from flask import current_app</code></p>
+<p>使用方法</p>
+<pre><code>ctx=app.app_context()
+ctx.push() # 激活上下文
+current_app.xph = 0</code></pre>
+<p>收回上下文的操作是<code>ctx.pop()</code>。其实际有什么作用尚不清楚</p>
+<p><strong>g</strong></p>
+<p>待学习</p>
+<p><strong>request</strong></p>
+<p>待学习</p>
+<p><strong>session</strong></p>
+<p>待学习</p>
+<h2 id="零碎知识点">零碎知识点</h2>
+<p><strong>发送<code>favicon.ico</code>图标</strong></p>
+<p>每次网页被打开时会默认发送<code>GET</code>请求，所以直接在路由中增加一个视图函数即可</p>
+<pre><code>@app.route(&#39;/favicon.ico&#39;)
+def favicon():
+    return app.send_static_file(&#39;favicon.ico&#39;)</code></pre>
+<p>这样比较方便可以统一更换图标。直接写在页面中也行</p>
+</body>
+</html>

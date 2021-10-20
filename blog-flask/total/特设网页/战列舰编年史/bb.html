@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>战列舰编年史</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css.css">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <script src="{{ url_for('static', filename='common/jquery.backstretch.min.js', _external=True) }}"></script>
+    <script src="{{ url_for('static', filename='common/echarts.js', _external=True) }}"></script>
+{#    <script src="{{ url_for('bb.static', filename='source.js', _external=True) }}"></script>#}
+    <script src="source.js"></script>
+    <script>
+        $(document).ready(function () {
+            //背景轮播图
+            $("body").backstretch([
+                "img/bg1.jpg",
+                "img/bg2.jpg",
+                "img/bg3.png"
+            ], { duration: 1000 * 30 });
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <h2>华盛顿海军条约各缔约方主力舰发展史</h2>
+        <h4>ワシントン海軍軍縮条約各締約国戦艦の発展の歴史</h4>
+        <br>
+        <p style="text-align: right;font-size: small">背景画像：印象的な旧日本帝国海軍戦艦 扶桑<p>
+    </header>
+    <main>
+
+        <div id="main3" style="width:760px;height:3000px"></div>
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('main3'), { devicePixelRatio: 4 });
+
+            option = {
+                legend: {
+                    show: true
+                },
+                tooltip: {
+                    show: true,
+                    axisPointer: {
+                        type: 'cross'
+                    },
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        saveAsImage: {}
+                    }
+                },
+                xAxis: {
+                    axisLabel: {
+                        fontWeight: 'bold',
+                        fontSize: 15
+                    },
+                    // name: '国别',
+                    // nameLocation: 'end',
+                    // nameTextStyle: {
+                    //     fontWeight: 'bold',
+                    //     fontSize: '30',
+                    // },
+                    triggerEvent: true,
+                    nameGap: 50,
+                    type: 'category',
+                    position: 'top',
+                    boundaryGap: true,
+                    data: ['英国', '美国', '日本', '法国', '意大利'],
+                    axisPointer: {
+                        snap: true,
+                        // type:'line'
+                    }
+
+                },
+                yAxis: {
+                    axisLabel: {
+                        fontWeight: 'bold',
+                        fontSize: 20
+                    },
+                    axisPointer: {
+                        type: 'line'
+                    },
+                    type: 'time',
+                    max: '1955-12-31',
+                    min: '1905-01-01',
+                    axisLine: {
+                        symbolSize: [10, 15]
+                    },
+                    axisTick: {
+                        interval: 12
+                    },
+                    splitLine: {
+                        show: true,
+                    },
+                    inverse: true,
+                    axisPointer: {
+                        snap: true,
+                        // type:'line'
+                    }
+                },
+                series: [
+                    {
+                        name: '美国',
+                        legend: {
+                            itemStyle: { decal: { color: 'rgba(0, 0, 0, 0)' } },
+                        },
+                        tooltip: {
+                            axisPointer: {
+                                type: 'cross'
+                            },
+                            formatter: function (params) {
+                                return usa[params.data[2]]
+                            }
+                        },
+                        // 文字标签
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: function (params) {
+                                return params.data[2]
+                            },
+                            //backgroundColor:'inherit',
+                            padding: 5,
+                            //color:'#ccc',
+                        },
+                        symbol: symbol,
+                        symbolSize: 20,
+                        //color:'black',
+                        type: 'line',
+                        smooth: true,
+                        data: usa_data,
+                        lineStyle: {
+                            width: 6
+                        },
+                    },
+                    {
+                        name: '英国',
+                        legend: {
+                            itemStyle: { decal: { color: 'rgba(0, 0, 0, 0)' } },
+                        },
+                        tooltip: {
+                            axisPointer: {
+                                type: 'cross'
+                            },
+                            formatter: function (params) {
+                                return england[params.data[2]]
+                            }
+                        },
+                        // 文字标签
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: function (params) {
+                                return params.data[2]
+                            },
+                            //backgroundColor:'inherit',
+                            padding: 5,
+                            //color:'#ccc',
+                        },
+                        symbol: symbol,
+                        symbolSize: 20,
+                        //color:'black',
+                        type: 'line',
+                        smooth: true,
+                        data: england_data,
+                        lineStyle: {
+                            width: 6
+                        },
+                    },
+                    {
+                        name: '日本',
+                        legend: {
+                            itemStyle: { decal: { color: 'rgba(0, 0, 0, 0)' } },
+                        },
+                        tooltip: {
+                            axisPointer: {
+                                type: 'cross'
+                            },
+                            formatter: function (params) {
+                                return japan[params.data[2]]
+                            }
+                        },
+                        // 文字标签
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: function (params) {
+                                return params.data[2]
+                            },
+                            //backgroundColor:'inherit',
+                            padding: 5,
+                            //color:'#ccc',
+                        },
+                        symbol: symbol,
+                        symbolSize: 20,
+                        //color:'black',
+                        type: 'line',
+                        smooth: true,
+                        data: japan_data,
+                        lineStyle: {
+                            width: 6
+                        },
+                    },
+                    {
+                        name: '法国',
+                        legend: {
+                            itemStyle: { decal: { color: 'rgba(0, 0, 0, 0)' } },
+                        },
+                        tooltip: {
+                            axisPointer: {
+                                type: 'cross'
+                            },
+                            formatter: function (params) {
+                                return france[params.data[2]]
+                            }
+                        },
+                        // 文字标签
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: function (params) {
+                                return params.data[2]
+                            },
+                            //backgroundColor:'inherit',
+                            padding: 5,
+                            //color:'#ccc',
+                        },
+                        symbol: symbol,
+                        symbolSize: 20,
+                        //color:'black',
+                        type: 'line',
+                        smooth: true,
+                        data: france_data,
+                        lineStyle: {
+                            width: 6
+                        },
+                    },
+                    {
+                        name: '意大利',
+                        legend: {
+                            itemStyle: { decal: { color: 'rgba(0, 0, 0, 0)' } },
+                        },
+                        tooltip: {
+                            axisPointer: {
+                                type: 'cross'
+                            },
+                            formatter: function (params) {
+                                return italy[params.data[2]]
+                            }
+                        },
+                        // 文字标签
+                        label: {
+                            show: true,
+                            position: 'right',
+                            formatter: function (params) {
+                                return params.data[2]
+                            },
+                            //backgroundColor:'inherit',
+                            padding: 5,
+                            //color:'#ccc',
+                        },
+                        symbol: symbol,
+                        symbolSize: 20,
+                        //color:'black',
+                        type: 'line',
+                        smooth: true,
+                        data: italy_data,
+                        lineStyle: {
+                            width: 6
+                        },
+                    },
+                    {
+                        name: '重要事件',
+                        tooltip: {
+                            show: false
+                        },
+                        legend: {
+                            show: false
+                        },
+                        type: 'line',
+                        lineStyle: {
+                            color: 'green'
+                        },
+                        markArea: {
+                            silent: 'true',
+                            label: {
+                                position: 'inside',
+                                color: 'rgb(255,255,255)',
+                                fontSize: '40px',
+                                fontWeight: 'bolder',
+
+                            },
+                            itemStyle: {
+                                color: 'rgba(255, 173, 177, 0.4)'
+                            },
+                            data: [[{
+                                name: '华盛顿海军条约（海军假日）',
+                                yAxis: '1922-02-06',
+                            }, {
+                                yAxis: '1936-12-31',
+                            }], [{
+                                name: '第一次世界大战',
+                                yAxis: '1914-07-28',
+                            }, {
+                                yAxis: '1918-11-11',
+                            }], [{
+                                name: '第二次世界大战',
+                                yAxis: '1939-09-01',
+                            }, {
+                                yAxis: '1945-09-02',
+                            }]]
+                        },
+                    }
+
+                ]
+            };
+
+            myChart.setOption(option);
+        </script>
+    </main>
+    <footer>
+        <p>从古罗马海军的三桨座战舰到晋朝的楼船，从西班牙大帆船到……皇家海军的三层加甲板战列舰。从古以来，昂贵的战舰，精于训练的官兵，都昭示着这是一只古老的和骄傲的军种。对于有漫长海岸线的国家来说。国家的荣辱与海军的兴废紧密捆绑在一起。在河流，在近海，在远洋，一幕幕改变了国家的历史进程，塑造英雄的传奇故事的残酷战争轮番上演。</p>
+        <p>对于一个表面百分之七十的面积被水域所覆盖的国家而言，驰骋大洋海军的官兵就是是历史的塑造者，他们积极追求技术进步，将其运用在武备和战术上。对于向海为生的国家来说，海军就是国家意志的体现，海军官兵就是国家意志的传达者。在萨拉米斯海战，特拉法加，日俄海战等等战争中，涌现出了地米斯托克利，纳尔逊，东乡平八郎等一批彪炳史册的海军将领。而伴随着提督的决断，历史的流向也为之一变。</p>
+        <p>而直至二十世纪上半叶，海军强国之间的攻防到达了一个高潮。受到工业革命的影响，海军技术迎来了快速发展，最终催生出了无畏级战列舰这一划时代的设计。在短短的半个世纪中，一个国家的战列舰的设计与制造水平就象征着本国的科技实力的巅峰。</p>
+        <p>而中国的积贫积弱，还未来得及实现外购战舰的计划，清朝就已经灭亡。自此，诞生了七下西洋壮举的中国就这样与无畏舰时代擦肩而过，在自己的海军史上留下了永远的遗憾。</p>
+        <p>只是，当海军是为了保卫祖国，维护和平而战时，就能爆发出巨大的力量，当一支舰队是为了侵略别国时，当海军成为了压迫和侵略别国的工具时，就迟早逃脱不了覆灭的道路。而这样的悲剧一直在轮番上演。</p>
+        <p>德意志帝国的海军最终魂断帕斯卡湾，堪与皇家海军争雄的公海舰队转瞬间烟消云散。</p>
+        <p>而日本，在脱亚入欧之后，不仅仅拥有了强大的战舰，甚至是比肩英美，将亚洲诸国远远甩在身后。可是，当这个国家，这支舰队被法西斯的阴云笼罩时，她们既没能保护国家，同时也为亚洲人民带来了深重的灾难。而作为国家科学技术实力的体现和人民团结的象征的战舰，其结局也只是作为一亿玉碎的前锋成为了军国主义陪葬。</p>
+        <p>光阴荏苒，在七十多年后，东亚国家再度拥有了强大的海军。这次，有了先进的军舰和为了和平勇于牺牲的海军官兵，这只伟大的海军一定可以担负起铲除法西斯余孽，永葆东亚和平的重担。</p>
+        <p>时光荏苒，军舰的样式，海战的形式都不断地发生着变化，一代一代的军舰和官兵翻涌着浪花从船坞和院校中奔涌而出，又终归于平静。而大海只是安静的注视着他们。用浪花和风声轻抚他们的残躯和灵魂 。</p>
+        <p>大海铭记不朽。</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-09-29_xlrd-xlwt</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="xlrd">xlrd</h1>
+<h2 id="准备工作">准备工作</h2>
+<p>需要安装</p>
+<pre><code>pip install  xlrd</code></pre>
+<p>引入</p>
+<pre><code>import xlrd</code></pre>
+<h2 id="方法">方法</h2>
+<p><strong>打开文件</strong></p>
+<pre><code>data = xlrd.open_workbook(filename)
+data = xlrd.open_workbook(filename,&#39;r&#39;) 以只读方式打开
+data = xlrd.open_workbook(filename,&#39;rb&#39;) 以二进制读取方式打开</code></pre>
+<p>原博客中有如下内容</p>
+<blockquote>
+<p>注意，如果文件名或者工作表名包含中文的话会打不开，可以直接将名称转码即可</p>
+<pre><code>filename = filename.decode(&#39;utf-8&#39;)</code></pre>
+</blockquote>
+<p>但实际上包含中文也是可以的。但是我的电脑的系统编码已经改为<code>utf-8</code>。所以在系统编码还是<code>GBK</code>的电脑上不清楚会是什么样子</p>
+<p><strong>工作表相关操作</strong></p>
+<pre><code>table = data.sheets()[0]          #通过索引顺序获取
+
+table = data.sheet_by_index(sheet_indx) #通过索引顺序获取 sheet_indx的值应该是数字形式
+
+table = data.sheet_by_name(sheet_name)#通过名称获取
+
+以上三个函数都会返回一个xlrd.sheet.Sheet()对象
+
+names = data.sheet_names()    #返回book中所有工作表的名字
+
+data.sheet_loaded(sheet_name or indx)   # 检查某个sheet是否导入完毕</code></pre>
+<p><font color="red"><strong>注意，无论是行操作还是列操作，行和列的行数都是从0开始而不是1</strong></font></p>
+<p><font color="red"><strong>注意，在(rowx, start_colx=0, end_colx=None)选择了要读取的每一行或列的范围后，会返回数组，按照数组的处理方式从其中获取数据</strong></font></p>
+<p><strong>行相关操作</strong></p>
+<pre><code>nrows = table.nrows  #获取该sheet中的有效行数
+
+table.row(rowx)  #返回由该行中所有的单元格对象组成的列表
+
+table.row_slice(rowx)  #返回由该列中所有的单元格对象组成的列表
+
+table.row_types(rowx, start_colx=0, end_colx=None)   #返回由该行中所有单元格的数据类型组成的列表
+
+table.row_values(rowx, start_colx=0, end_colx=None)   #返回由该行中所有单元格的数据组成的列表
+
+table.row_len(rowx) #返回该列的有效单元格长度</code></pre>
+<p><strong>列相关操作</strong></p>
+<pre><code>ncols = table.ncols   #获取列表的有效列数
+
+table.col(colx, start_rowx=0, end_rowx=None)  #返回由该列中所有的单元格对象组成的列表
+返回结果的格式是[text:&#39;姓名&#39;, text:&#39;王五&#39;, text:&#39;赵四&#39;]，colx的格式为数字，end_rowx的数值从1开始
+
+table.col_slice(colx, start_rowx=0, end_rowx=None)  #返回由该列中所有的单元格对象组成的列表
+
+table.col_types(colx, start_rowx=0, end_rowx=None)   #返回由该列中所有单元格的数据类型组成的列表
+
+table.col_values(colx, start_rowx=0, end_rowx=None)   #返回由该列中所有单元格的数据组成的列表</code></pre>
+<p><strong>单元格相关操作</strong></p>
+<pre><code>table.cell(rowx,colx)   #返回单元格对象
+
+table.cell_type(rowx,colx)    #返回单元格中的数据类型
+
+table.cell_value(rowx,colx)   #返回单元格中的数据
+
+table.cell_xf_index(rowx, colx)   # 原文作者还没弄明白</code></pre>
+<p><strong>读取时间类数据的方法</strong></p>
+<pre><code>xlrd.xldate.xldate_as_datetime(data,0)
+xlrd.xldate.xldate_as_datetime(data,0).__format__(r&#39;%Y-%m-%d&#39;)
+xlrd.xldate.xldate_as_datetime(data,0).__str__()
+
+打印的结果分别为
+datetime格式数据 
+字符串格式数据 不带时间
+字符串格式数据 带时间</code></pre>
+<p>data处放入一个读出来的数，比如table.cell_value(rowx,colx)，如下方示例</p>
+<pre><code>hxy = xlrd.xldate.xldate_as_datetime(table.cell_value(start1,0),0).__format__(r&#39;%Y-%m-%d&#39;)</code></pre>
+<p>至于后面的0是什么意思还不太清楚，看有的博客写的是1</p>
+<h1 id="xlwt">xlwt</h1>
+<h2 id="准备工作-1">准备工作</h2>
+<p>需要安装</p>
+<pre><code>pip install  xlrd</code></pre>
+<p>引入</p>
+<pre><code>import xlrd</code></pre>
+<h2 id="操作流程">操作流程</h2>
+<h3 id="创建文件">创建文件</h3>
+<p><strong>创建工作簿</strong></p>
+<pre><code>xl = xlwt.Workbook(encoding=&#39;utf-8&#39;)</code></pre>
+<p><strong>创建sheet</strong></p>
+<pre><code>sheet = xl.add_sheet(&#39;sheet1&#39;, cell_overwrite_ok=False)</code></pre>
+<h3 id="设置具体样式">设置具体样式</h3>
+<p>这里的逻辑是先预设数套样式模板，在写入数据的时候选择相应的模板</p>
+<p><strong>创建一个样式模板</strong></p>
+<pre><code>style1 = xlwt.XFStyle()</code></pre>
+<p><strong>设置字体</strong></p>
+<pre><code>font1 = xlwt.Font()
+font1.name = &#39;Times New Roman&#39;</code></pre>
+<p>加粗</p>
+<pre><code>font1.bold = True</code></pre>
+<p>下划线</p>
+<pre><code>font1.underline = True</code></pre>
+<p><strong>将设置好的字体绑定给创建的样式模板</strong></p>
+<pre><code>style1.font = font1</code></pre>
+<p>除此之外还可以设置边框等，设置完后像这样绑定给不同的模板就行</p>
+<p><strong>设置单元格数字格式</strong></p>
+<p>设置为时间格式，并直接绑定给模板</p>
+<pre><code>style.num_format_str = &#39;YYYY-MM-DD&#39;</code></pre>
+<p><strong>设置列宽</strong></p>
+<p>列宽不属于模板的范畴，这也很好理解原因</p>
+<pre><code>worksheet.col(0).width = 3333</code></pre>
+<h3 id="写入数据">写入数据</h3>
+<p>一个格子一个格子的写入。如果需要使用样式就在后面加上对应样式模板的名称</p>
+<pre><code>sheet.write(0, 0, &#39;不带样式的携入&#39;)
+sheet.write(1, 0, &#39;带样式的写入&#39;, style)</code></pre>
+<h3 id="保存文件">保存文件</h3>
+<pre><code>xl.save(&#39;C:\\Users\\15136\\Desktop\\123.xls&#39;)</code></pre>
+<p>该包可实现写入的时候规定字体，边框和底色等等样式，功能十分强大。用的时候再学</p>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>画廊</title>
+    <meta charset="utf-8">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <link rel="stylesheet" href="gallery.css">
+    <script>
+        $(document).ready(function () {
+            //点击图片之后查看大图
+            $('img').click(function () {
+                url = $(this).attr("src")
+                url = url.replace('small', 'big')
+                window.open(url, '_blank', '', true)
+            })
+        })
+    </script>
+</head>
+<body>
+<header>
+    <h1>Gallery</h1>
+    <ul>
+        <li>tool：wacom ctl-6100</li>
+        <li>software：PaintTool SAI Ver.2</li>
+    </ul>
+    <div style="clear: both;"></div>
+</header>
+<main>
+    <!--1-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>对Pixiv网站用户<a href="https://www.pixiv.net/users/788728" target="_blank">久留里</a>的作品的模仿。综合各方面信息确认了运城市辖区范围内的铁路线路图并进行绘制</p>
+            <br>
+            <p class="jp">この絵はPixivのユーザー<a href="https://www.pixiv.net/users/788728" target="_blank">久留里</a>の作品の風格に似せて、ネットで運城市の範囲内の電車線路の情報を探して描いた</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/1.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--2-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>架空城际线路图</p>
+            <br>
+            <p class="jp">架空電車線路図</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/2.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--3-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>临摹《从零开始的异世界生活》出场角色贝雅托莉丝　其一</p>
+            <br>
+            <p class="jp">「Re:ゼロから始める異世界生活」のキャラクター：ベヤトリスの転写　其一</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/5.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--4-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>临摹《从零开始的异世界生活》出场角色贝雅托莉丝　其二</p>
+            <br>
+            <p class="jp">「Re:ゼロから始める異世界生活」のキャラクター：ベヤトリスの転写　其二</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/3.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--5-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>临摹《从零开始的异世界生活》出场角色贝雅托莉丝　其三<br>这三张照着画完后基本掌握了数位板的使用方法</p>
+            <br>
+            <p class="jp">「Re:ゼロから始める異世界生活」のキャラクター：ベヤトリスの転写　其三</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/4.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>PS课程的学习作业</p>
+            <br>
+            <p class="jp">学校のPhotoshop科目の宿題</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/6.gif" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--7-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>2018年上海跨年旅行纪念</p>
+            <br>
+            <p class="jp">2018年天津から上海への旅行の記念</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/7.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+        <!--8-->
+    <div class="b1">
+        <!--说明-->
+        <div class="b2">
+            <p>纪念碑谷的二创，临摹了部分游戏场景并加以改动</p>
+            <br>
+            <p class="jp">ゲーム「Monument Valley」の二次創作</p>
+        </div>
+        <!--图形-->
+        <div class="b3">
+            <img alt="图片" src="img/small/8.jpg" style="height: 100%;">
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</main>
+</body>
+</html>

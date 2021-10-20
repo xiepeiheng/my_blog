@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(img/index/bg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center;
+}
+ul li { list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active{
+    color: black;
+}
+
+
+
+/* 导航栏 */
+.page-header1{
+    height: 50px;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    position: sticky;
+    top: 0;
+}
+.page-header2{
+    height: 50px;
+    position: sticky;
+    top: 50px;
+}
+.page-header1 ul li{
+    float: right;
+    height: 50px;
+    width: 100px;
+    /*margin: 0 10px;*/
+    text-align: center;
+    line-height: 25px;
+    font-size: small;
+}
+.page-header1 ul li:hover{
+    background-color: rgb(192,192,192);
+}
+
+.logo{
+    float: left;
+    height: 50px;
+    width: 200px;
+    background-color: blueviolet;
+    line-height: 25px;
+    text-align: center;
+}
+.star{
+    color: coral;
+    line-height: 100%;
+    -webkit-text-stroke: 2px coral;
+}
+
+/*正文外框*/
+.b1{
+    margin: 40px auto;
+    width: 640px;
+    /*height: 1000px;*/
+    /*background-color: aqua;*/
+    padding: 30px;
+    /*border: 5px solid black;*/
+
+}
+.b1 p{
+    line-height: 1.5em;
+}
+.jp{
+    font-size: smaller;
+}

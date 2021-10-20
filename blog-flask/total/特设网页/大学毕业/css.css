@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    list-style-type: none;
+}
+/* body{
+    height: 100%;
+} */
+/* 标题部分 */
+header{
+    width: 760px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+}
+header p:first-child{
+    font-weight: bold;
+}
+header p:last-child{
+    font-size: x-small;
+}
+
+/* 单个日期的最外层箱体 */
+.b1{
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 auto;
+    position: relative;
+}
+.b2{
+    width: 30px;
+    height: 100%;
+    margin-left: 55px;
+    background-color: #C2C2C2;
+}
+.b2-1{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    position: relative;
+    top: 50px;
+    left: -30px;
+    background-color: #C2C2C2;
+    line-height: 90px;
+    text-align: center;
+    font-weight: bold;
+}
+.b2-last{
+    width: 30px;
+    margin-left: 55px;
+    background-color: #C2C2C2;
+}
+.b3{
+    float: right;
+    width: 660px;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    padding-bottom: 20px;
+    font-size: small;
+}
+.photo{
+    margin: 20px 0 0 20px;
+    width: 300px;
+    height: 200px;
+    float: left;
+    position: relative;
+    background-color: #C2C2C2;
+
+}
+img{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+img:hover{
+    cursor: pointer;
+}
+.text{
+    margin: 20px 0 0 20px;
+    width: 300px;
+    height: 200px;
+    float: left;
+    position: relative;
+}
+.text ul li:nth-child(3){
+    font-size: x-small;
+}
+/* 尾声 */
+footer{
+    width: 760px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+footer p:nth-of-type(even){
+    font-size: x-small;
+}
+footer p:nth-of-type(odd){
+    font-size: small;
+}

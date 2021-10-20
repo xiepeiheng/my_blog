@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration-line: none;
+}
+button{
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    outline: none;
+}
+
+
+/* 题目框 */
+header{
+    width: 820px;
+    margin: 20px auto 0;
+}
+button{
+    margin: 20px 30px 0 0;
+    width: 100px;
+    height: 40px;
+    border: solid 5px black;
+    font-weight: bold;
+    font-size: smaller;
+    line-height: 100%;
+    padding: 0;
+    border-radius: 10px;
+}
+footer{
+
+}
+
+body{
+    background: #E8E8E8;
+}
+.title{
+    width: 820px;
+    margin: 30px auto 10px;
+}
+
+/*主单元格*/
+.b1{
+    width: 780px;
+    border: solid 5px black;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px 0 0 20px;
+}
+/*单个事件单元格*/
+.b2 {
+    float: left;
+    width: 230px;
+    height: 180px;
+    border: solid 5px black;
+    border-radius: 10px;
+    margin: 0 20px 20px 0;
+    position: relative;
+    text-align: center;
+    font-size: larger;
+}
+.b2-2{
+    width: 100%;
+    margin: 0 auto;
+    color: rgba(0,0,0,0);
+}
+.b2-1{
+    position: absolute;
+    left:0;
+	top:0;
+    background-color: #E8E8E8;
+    width: 210px;
+    height: 160px;
+    border-radius: 5px;
+    display: none;
+    font-size: medium;
+    padding: 10px;
+    line-height: 1.25em;
+    text-align: left;
+}
+.b2-1 a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.b2-1 a:visited,.b2-1 a:link,.b2-1 a:hover,.b2-1 a:active{
+    color: black;
+}
+footer{
+    width: 800px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+footer table{
+    margin: 20px auto 10px;
+    font-size: large;
+}
+footer img{
+    height: 100%;
+}
+footer table td{
+    height: 60px;
+    font-size: small;
+}
+.button{
+    width: 810px;
+    margin: 10px auto;
+}

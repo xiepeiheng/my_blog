@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_datetime</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h2 id="引入">引入</h2>
+<p>这个包python自带，直接引入即可</p>
+<pre><code>import datetime</code></pre>
+<p>这个包是对<code>time</code>包和<code>date</code>包的高级封装</p>
+<p>这个包返回和使用的数据有五种类型</p>
+<ol type="1">
+<li>date：日期对象，有<code>year,month,day</code>等属性</li>
+<li>time：时间对象，有<code>hour, minute, second</code>等属性</li>
+<li>datetime：表示日期时间</li>
+<li>tzinfo：时区</li>
+<li>timedelate：表示时间间隔。这个类型的日期对象可以进行加减乘除运算</li>
+</ol>
+<h2 id="datetime.date">datetime.date()</h2>
+<p>将年月日设置为date对象，该对象的属性有<code>year,month,day</code>。打印相应对象可返回<code>int</code>类型数字</p>
+<pre><code>cmy=datetime.date(2021,8,5)
+print(cmy)
+print(type(cmy))
+print(cmy.year, cmy.month, cmy.day)
+-----
+2021-08-05
+&lt;class &#39;datetime.date&#39;&gt;
+2021 8 5</code></pre>
+<p>对象可以进行比较和减法操作（没有加法，不能在加一个天数后形成新的对象）</p>
+<p>但是进行完减法操作后返回的并不是字符串而是<code>timedelate</code>类型的数据</p>
+<pre><code>cmy1 = datetime.date(2019,8,26)
+cmy2 = datetime.date(2019,9,26)
+print(cmy1 &lt; cmy2)
+print(cmy2-cmy1)
+print(type(cmy2-cmy1))
+-----
+True
+31 days, 0:00:00
+&lt;class &#39;datetime.timedelta&#39;&gt;</code></pre>
+<h2 id="datetime.date.today">datetime.date.today()</h2>
+<p>获取当天日期的date对象</p>
+<pre><code>cmy = datetime.date.today()
+print(cmy)
+print(cmy.year,cmy.month,cmy.day)
+-----
+2021-08-05
+2021 8 5</code></pre>
+<h2 id="datetime.date.fromtimestamp">datetime.date.fromtimestamp()</h2>
+<p>给定一个时间戳，返回date对象</p>
+<pre><code>print(datetime.date.fromtimestamp(1628308379.7419758))
+-----
+2021-08-07</code></pre>
+<h2 id="为date对象提供的方法">为date对象提供的方法</h2>
+<h3 id="replace">.replace()</h3>
+<p>在原有date对象的基础上修改某个属性后返回新的date对象。原对象不变</p>
+<pre><code>cmy = datetime.date(2010, 4, 6)
+zfh = cmy.replace(year=2022, month=6, day=2)
+print(type(cmy), cmy)
+print(type(zfh), zfh)
+-----
+&lt;class &#39;datetime.date&#39;&gt; 2010-04-06
+&lt;class &#39;datetime.date&#39;&gt; 2022-06-02</code></pre>
+<h3 id="weekday-.isoweekday">.weekday() / .isoweekday()</h3>
+<p>以<code>int</code>返回data对象的星期，区别是星期的起始点不同</p>
+<pre><code>cmy = datetime.date(2021, 8, 7)
+print(cmy.weekday())
+print(cmy.isoweekday())
+-----
+5
+6</code></pre>
+<h3 id="isoformat">.isoformat()</h3>
+<p>返回格式如<code>yyyy-mm-dd</code>的字符串</p>
+<pre><code>cmy = datetime.date(2021, 8, 7)
+print(cmy.isoformat())
+-----
+2021-08-07</code></pre>
+<h3 id="timetuple">.timetuple()</h3>
+<p>将date对象转换为<code>time</code>库中的<code>struct_time</code>对象</p>
+<pre><code>cmy = datetime.date(2021, 8, 7)
+print(cmy.timetuple())
+print(type(cmy.timetuple()))
+-----
+time.struct_time(tm_year=2021, tm_mon=8, tm_mday=7, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=5, tm_yday=219, tm_isdst=-1)
+&lt;class &#39;time.struct_time&#39;&gt;</code></pre>
+<h2 id="time对象及其相关方法">time对象及其相关方法</h2>
+<p>略，用的时候再查</p>
+<h2 id="datatime对象及其相关方法">datatime对象及其相关方法</h2>
+<p>可以使用python的日期格式化符号。详细方法用的时候再查</p>
+<h2 id="timedelate对象与加减法">timedelate对象与加减法</h2>
+<p>这个对象实际上是一个两个日期之间的天数，所以可以同类型之间进行加减乘除。显然，它和data对象之间只能进行加减操作</p>
+<pre><code>cmy1 = datetime.date(2021, 8, 10)
+cmy2 = datetime.date(2021, 8, 7)
+cmy3 = cmy1-cmy2
+print(type(cmy3), cmy3)
+cmy4 = datetime.date(2021, 8, 15)
+print(type(cmy4+cmy3), cmy4+cmy3)
+print((cmy4+cmy3).isoformat())
+-----
+&lt;class &#39;datetime.timedelta&#39;&gt; 3 days, 0:00:00
+&lt;class &#39;datetime.date&#39;&gt; 2021-08-18
+2021-08-18</code></pre>
+<p>也可以设置一个<code>timedelate</code>对象用来计算</p>
+<pre><code>print(datetime.timedelta(days=1))
+-----
+1 day, 0:00:00</code></pre>
+<p>也可以使用<code>.days</code>方法将<code>timedelate</code>对象转换为整数</p>
+<pre><code>print(datetime.timedelta(days=1).days)</code></pre>
+</body>
+</html>

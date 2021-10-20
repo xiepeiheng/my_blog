@@ -1,0 +1,150 @@
+<!--首要方格-->
+<header>
+    <h1>谢佩恒的主页</h1>
+</header>
+<main>
+<div class="title">
+    <h2>概况部分</h2>
+</div>
+<div class="b1">
+    <!--概况-->
+    <div class="b2">
+        <div class="b2-2"><p>简介</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('guide.guide1') }}" target="_blank">主页的概况</a>
+        </div>
+    </div>
+    <!--概况-->
+    <div class="b2">
+        <div class="b2-2"><p>GitHub</p></div>
+        <div class="b2-1">
+            <a href="https://github.com/xiepeiheng" target="_blank">最大同性交友网站地址</a>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<div class="title">
+    <h2>完成的工作</h2>
+</div>
+<!--完成的项目-->
+<div class="b1">
+    <!--新冠病毒-->
+    <div class="b2">
+        <div class="b2-2"><p>新冠病毒可视化</p></div>
+        <div class="b2-1">
+            <a href="http://www.silyahuukou.cn:9001/picture" target="_blank">从腾讯等公司的数据接口获取数据并进行可视化工作</a>
+        </div>
+    </div>
+    <!--机器检修-->
+    <div class="b2">
+        <div class="b2-2"><p>设备故障可视化</p></div>
+        <div class="b2-1">
+            <a href="http://www.silyahuukou.cn:9002/down" target="_blank">对方管制造设备的故障记录进行可视化</a>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<div class="title">
+    <h2>笔记</h2>
+</div>
+<!--日志方格-->
+<div class="b1">
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>个人日志</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('diary.diary1') }}" target="_blank">以时间排序的个人日志</a>
+        </div>
+    </div>
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>其他事项</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('important.important1') }}" target="_blank">不以时间排序的个人日志</a>
+        </div>
+    </div>
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>计算机笔记</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('computer.computer1') }}" target="_blank">以语言种类分类计算机笔记</a>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+<div class="title">
+    <h2>特设网页</h2>
+</div>
+<!--特设网页-->
+<div class="b1">
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>大学毕业纪念</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('graduation.graduation') }}" target="_blank">以时间轴的形式记录在校最后时刻的照片 </a>
+        </div>
+    </div>
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>娱乐活动回顾</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('culture.cultureindex') }}" target="_blank">每年年末对于当年娱乐活动的回顾</a>
+        </div>
+    </div>
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><div>无畏舰简史</div></div>
+        <div class="b2-1">
+            <a href="{{ url_for('bb.bb') }}" target="_blank">鉴于事务繁忙游戏战舰世界已经一段时间没玩了，以后应该也没时间玩了。制作该网页纪念退游</a>
+        </div>
+    </div>
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>画廊</p></div>
+        <div class="b2-1">
+            <a href="{{ url_for('gallery.gallery1') }}" target="_blank">所有板绘作品的展示，在购买了正版SAI2预计于明年继续画画</a>
+        </div>
+    </div>
+    <!---->
+    <div class="b2">
+        <div class="b2-2"><p>音乐收集</p></div>
+        <div class="b2-1">
+            <a href="#">很多之前喜欢听的歌随着歌单的调整而被遗忘，在这里按照专辑分类（网页仍在施工中）</a>
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+</div>
+
+<div class="title">
+    <h2>其他链接</h2>
+</div>
+<!--完成的项目-->
+<div class="b1">
+    <!--新冠病毒-->
+    <div class="b2">
+        <div class="b2-2">
+            <p>Mini Tokyo 3D</p>
+        </div>
+        <div class="b2-1">
+            <a href="https://minitokyo3d.com/" target="_blank">东京地区电车运行动态地图（需要科学上网）</a>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>
+
+</main>
+<footer>
+    <table>
+        <tr>
+            <td>本网站由</td>
+            <td><img src="{{ url_for('static', filename='common/ubuntu-logo.png', _external=True) }}"></td>
+            <td>和</td>
+            <td><img src="{{ url_for('static', filename='common/flask-logo.png', _external=True) }}"></td>
+            <td>强力驱动</td>
+        </tr>
+    </table>
+</footer>

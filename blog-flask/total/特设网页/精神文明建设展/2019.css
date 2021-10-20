@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(img/2019/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+ul li { list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active{
+    color: black;
+}
+
+
+
+/* 导航栏 */
+.page-header1{
+    height: 50px;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    position: sticky;
+    top: 0;
+}
+.page-header2{
+    height: 50px;
+    position: sticky;
+    top: 50px;
+}
+.page-header1 ul li{
+    float: right;
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    line-height: 25px;
+    font-size: small;
+}
+.page-header1 ul li:hover{
+    background-color: rgb(192,192,192);
+}
+.logo{
+    float: left;
+    height: 50px;
+    width: 200px;
+    background-color: blueviolet;
+    line-height: 25px;
+    text-align: center;
+}
+
+
+/* 简介框 */
+
+
+
+.first{
+    width: 800px;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    border-top: solid 1px rgba(255, 255, 255, 0);
+    margin: 40px auto;
+}
+
+/* 前言 */
+.second{
+    width: 760px;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    border-top: solid 1px rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 40px auto;
+    padding: 20px;
+}
+.second p{
+    font-size: smaller;
+}
+
+/* 参评作品列表 */
+.table{
+    width: 760px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: solid 1px rgba(255, 255, 255, 0.7);
+    margin: 40px auto;
+    padding: 20px;
+}
+.table table{
+    border-collapse:collapse;
+}
+.table th, .table td{
+    height: 30px;
+    width: 190px;
+    font-size: smaller;
+    border-bottom: solid 2px black;
+}
+.table th:nth-child(3), .table td:nth-child(3){
+    border-left: solid 2px black;
+}
+
+
+.star{
+    color: coral;
+    line-height: 100%;
+    /*font-size: large;*/
+    -webkit-text-stroke: 2px coral;
+}
+
+/* 一个评奖单元 */
+.a1{
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: solid 1px rgba(255, 255, 255, 0.7);
+    margin: 40px auto;
+    padding-bottom: 20px;
+}
+/* 图像框 */
+.a2{
+    margin: 19px 0 0 20px;
+    height: 300px;
+    width: 450px;
+    background-color: rgb(245, 245, 245);
+    border: solid 5px rgb(245, 245, 245);
+    text-align: center;
+    /*在计算行宽时貌似要加border?*/
+    line-height: 290px;
+}
+/* 标题框 */
+.a3{
+    float: right;
+    margin: 19px 20px 0 0;
+
+    width: 270px;
+    /* background-color: blueviolet; */
+    /* border: solid 1px black ; */
+}
+.a3 table th{
+    width: 60px;
+    text-align: left;
+}
+/* 官方评价框 */
+.a4{
+    margin: 30px 20px 0 20px;
+    /* height: 200px; */
+    width: 760px;
+    /* background-color: blueviolet; */
+}
+.a4 table tr{
+    line-height: 1.5em;
+}
+.a4 table th{
+    width: 90px;
+    vertical-align: top;
+}
+.a4 table td{
+    width: 680px;
+}
+.a4 table tr:nth-child(3) a{
+    text-decoration:underline
+}
+.a4 a:hover{
+    color: white;
+    background-color: red;
+    font-weight: bold;
+}
+/* 图像居中 */
+img{
+    vertical-align: middle;
+}
+
+
+/* 评奖单元内的文字 */
+.chaward, .jpaward{
+    font-size: 20px;
+    font-weight: bold;
+}
+.a3 table, .a4 table{
+    font-size: x-small;
+}
+
+/*页面右下角返回最上方*/
+.foot1{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.foot1 a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 60px;
+}
+.foot2{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: xx-small;
+    font-weight: bold;
+}

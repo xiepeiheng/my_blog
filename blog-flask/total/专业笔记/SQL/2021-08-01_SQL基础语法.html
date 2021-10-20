@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_SQL基础语法</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="sql语法总结">SQL语法总结</h1>
+<h2 id="distinct">DISTINCT</h2>
+<p>在检索一列时不希望重复的值反复出现</p>
+<p>SELECT DISTINCT 生产线 FROM repair</p>
+<p>这样比如说213产线就只会出现一次</p>
+<p>但需要注意的是，这个关键字后面最好只写一个列名，除非两列的内容完全一样，否则该关键字失效，比如下面的语句就还会直接返回所有结果</p>
+<p>SELECT DISTINCT 生产线,日期 FROM repair</p>
+<h2 id="top">TOP</h2>
+<p>使用该关键字限制最多返回多少行</p>
+<p>SELECT TOP 5 prod_name FROM Products;</p>
+<p>返回前五行结果</p>
+<p>只适用于sqlsever和access</p>
+<h2 id="limit">LIMIT</h2>
+<p>使用该关键字限制</p>
+<p>SELECT 生产线 FROM repair LIMIT 5（这种用法适用于mysql和sqlite3）</p>
+<h2 id="offset">OFFSET</h2>
+<p>select DISTINCT 生产线 from repair LIMIT 5 OFFSET 5</p>
+<p><font color="red">因为行数是从零开始算的</font></p>
+<p>从第六个数据开始显示（包括第六个），共显示5个数据</p>
+<h2 id="注释">注释</h2>
+<p>–这是一行注释</p>
+<p>使用两个连字符表示注释</p>
+<h2 id="order-by">ORDER BY</h2>
+<p>用于排序</p>
+<p><font color="red">这个子句应该是查询语句中的最后一个子句，否则会报错</font></p>
+<p>select DISTINCT 生产线 from repair ORDER BY 生产线</p>
+<p>会按照机组编号默认从小到大的顺序排序，当然排序根据的列无需一定要出现在select子句中</p>
+<p>排序也可以根据多个列来排序，使用逗号隔开即可</p>
+<pre><code>ORDER BY prod_price, prod_name; </code></pre>
+<h2 id="desc">DESC</h2>
+<p>在ORDER BY后加这个表示倒序</p>
+<p>select DISTINCT 生产线 from repair ORDER BY 生产线 DESC</p>
+<p>在按照多个列的顺序时排序也可使用，以下语句表示按照商品价格倒序排序，若价格相同再按照名字的首字母正序排序</p>
+<pre><code>ORDER BY prod_price DESC, prod_name; </code></pre>
+<h2 id="null">NULL</h2>
+<p><strong><font color="red">注意，空字符串（直接打两个挨着的引号中间无空格）和null不是一回事</font></strong></p>
+<h2 id="where">WHERE</h2>
+<p>where支持的操作符</p>
+<ol type="1">
+<li>大于小于等于之类的</li>
+<li>between</li>
+<li>is null</li>
+</ol>
+<p>为了更为灵活的使用WHERE子句，还有如下四个重要操作符</p>
+<h3 id="and-or">AND OR</h3>
+<p>AND的优先级高于OR，因此建议加括号来明确</p>
+<p>WHERE (vend_id = ‘DLL01’ OR vend_id = ‘BRS01’) AND prod_price &gt;= 10;</p>
+<h3 id="in">IN</h3>
+<p>IN可以替代OR，<font color="red">并且它比OR更快</font></p>
+<p>WHERE vend_id IN ( ‘DLL01’, ‘BRS01’ )</p>
+<h3 id="not">NOT</h3>
+<p>直接跟在WHERE后面用于否定任何东西，当然可以用<code>&lt;&gt;</code>符号实现一样的效果。但是<code>机组 not in (&#39;127&#39;,&#39;762&#39;)</code>这种用起来更方便</p>
+<h2 id="like">LIKE</h2>
+<p>用于模糊查询的子句，在WHERE后面使用</p>
+<p>WHERE prod_name LIKE ‘Fish%’;</p>
+<p>通配符</p>
+<table>
+<thead>
+<tr class="header">
+<th>种类</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>%</td>
+<td>表示任意字符出现任意次数，<strong>但’%’不会匹配NULL</strong></td>
+</tr>
+<tr class="even">
+<td>_</td>
+<td>表示任意字符出现一次</td>
+</tr>
+<tr class="odd">
+<td>[charlist]</td>
+<td>字符列中的任何单一字符</td>
+</tr>
+<tr class="even">
+<td>[^charlist]</td>
+<td>不在字符列中的任何单一字符</td>
+</tr>
+</tbody>
+</table>
+<p><font color="red">注意，通配符只能用于匹配字符串内容，数字不行</font></p>
+<p>一般而言，数据库会用空格补充没有填入内容的部分。所以匹配<code>a%b</code>时因为b后面被填充了空格导致匹配失败，有两个方法，一个是<code>a%b%</code>，一个是使用<code>RTRIM()</code>函数来除去数据右侧的空格</p>
+<h2 id="拼接字段">拼接字段</h2>
+<p>使用||作为加号，数据库不同，分别有<code>+</code>，<code>||</code>，<code>Concat</code>等不同的方法</p>
+<pre><code>select 生产线 ||&#39;(&#39;|| 工序||&#39;)&#39; from repair</code></pre>
+<p>结果为<code>502(换型)</code></p>
+<h2 id="as">AS</h2>
+<p>别名，如果要查找的值过于复杂，比如<code>round(sum(机修),3)</code>这种，后面还要写<code>order by round(sum(机修),3)</code>这种东西就比较复杂。使用别名后后面直接用即可</p>
+<p>一些函数中也有，比如<code>cast(机修天 as int)</code></p>
+<h2 id="字符串处理函数">字符串处理函数</h2>
+<p>不同的数据库使用的函数可能不一样，请注意。</p>
+<p>LEFT()（或使用子字符串函数） 返回字符串左边的字符</p>
+<p>RIGHT()（或使用子字符串函数） 返回字符串右边的字符</p>
+<p><strong>LENGTH()（也使用DATALENGTH()或LEN()） 返回字符串的长度</strong></p>
+<p>LOWER()（Access使用LCASE()） 将字符串转换为小写</p>
+<p><strong>LTRIM() 去掉字符串左边的空格</strong></p>
+<p><strong>RTRIM() 去掉字符串右边的空格</strong></p>
+<p><strong>TRIM() 去掉字符串左右两边的空格</strong></p>
+<p>SOUNDEX() 返回字符串的SOUNDEX值</p>
+<p>UPPER()（Access使用UCASE()） 将字符串转换为大写</p>
+<h2 id="时间函数">时间函数</h2>
+<p><strong>数据库有一套强大的时间函数</strong></p>
+<p>包括得知现在的日期，现在月份的最后一天，以任意格式返回日期等</p>
+<p>比如<code>strftime(&#39;%Y&#39;, order_date) = &#39;2012&#39;</code>函数</p>
+<p>用的时候再查</p>
+<h2 id="数学函数">数学函数</h2>
+<p>ABS() 返回一个数的绝对值</p>
+<p>COS() 返回一个角度的余弦</p>
+<p>EXP() 返回一个数的指数值</p>
+<p>PI() 返回圆周率</p>
+<p>SIN() 返回一个角度的正弦</p>
+<p>SQRT() 返回一个数的平方根</p>
+<p>TAN() 返回一个角度的正切</p>
+<h2 id="汇总数据">汇总数据</h2>
+<p>别忘了max()，min()，avg()等</p>
+<h2 id="group-by-having">group by / having</h2>
+<p>group by中的列应该在select中存在，除了</p>
+<p>where过滤行</p>
+<p>group by进行分组</p>
+<p>having过滤分组</p>
+<h2 id="子查询">子查询</h2>
+<p>join</p>
+<p>left join</p>
+</body>
+</html>

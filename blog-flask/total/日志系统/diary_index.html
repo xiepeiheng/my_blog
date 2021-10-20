@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>个人日志</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="diary.css">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".year").click(function () {
+                a = $(this).attr("year")
+                $("[year1=" + a + "][month1]").hide();
+                $("[year1=" + a + "][month]").toggle();
+            });
+            $(".month").click(function () {
+                a = $(this).attr("year1")
+                b = $(this).attr("month")
+                console.log(a)
+                $("[year1=" + a + "][month1=" + b + "]").toggle();
+            });
+            $(".day").click(function () {
+                a = $(this).attr("address")
+                {#console.log("{{ url_for('diary.diary2',a='jsk') }}".replace("jsk", a))#}
+                {#window.open("{{ url_for('diary.diary2',a='jsk') }}".replace("jsk", a));#}
+                window.open("{{ url_for('diary.diary2',a='jsk') }}".replace("jsk", a));
+            });
+            $('#bt1').click(function () {
+                $('.month').show()
+                $('.day').show()
+            });
+            $('#bt2').click(function () {
+                $('.month').hide()
+                $('.day').hide()
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>日志目录</h1>
+</header>
+<div class="bt1">
+    <button id="bt1">全部展开</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="bt2">全部收回</button>
+</div>
+
+
+<main>
+    {% include 'diary.html' %}
+</main>
+</body>
+</html>

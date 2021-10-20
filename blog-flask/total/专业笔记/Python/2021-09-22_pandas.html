@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-09-22_pandas</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="pandas">pandas</h1>
+<h2 id="引入">引入</h2>
+<pre><code>pip install pandas</code></pre>
+<p>下列内容中使用如下方式使用包</p>
+<pre><code>import pandas as pd</code></pre>
+<p><strong>以下内容是之前应付课程学的，即为混乱，没有整理的价值。之后会抽空学习重写。</strong></p>
+<p>直接写出一张表 //列名：该列的数据 df = pd.DataFrame({‘a’: [1, 2, 1, 3], ‘b’: [0.4, 1.1, 0.1, 0.8], ‘c’: [‘X’, ‘Y’, ‘X’, ‘Z’], ‘d’: [[0, 0], [0, 1], [1, 0], [1, 1]], ‘e’: [True, True, False, True]})</p>
+<p>读取文件的方法 titanic_df = pd.read_csv(“C:/Users/谢佩恒/Desktop/KCGEDU/データ可視化実習/第6节/test.csv”, engine=‘python’) 读取文件时碰到中文乱码的话使用 tj_df = pd.read_csv(“C:/Users/谢佩恒/Desktop/12345.csv”, engine=‘python’,encoding=‘utf-8’) 打印这个文件有多少行 print(titanic_df.shape[0]) 打印这个文件有几行几列 print(df.shape) 每一列的列名 print(titanic_df.columns) 获取该数据集的摘要，譬如每列的列名，列名的格式等信息 print(titanic_df.info()) 不需要数据集的全部列的信息，只需要个别列的时候 valiables = [‘survived’, ‘pclass’, ‘sex’, ‘age’] //需要的列 titanic_df = titanic_df[valiables] print(titanic_df) 按照单个条件筛选 print(titanic_df.query(‘age &gt; 20’)) 按照多个条件筛选 print(tj_df.query(‘(姓名 == “谢”)&amp;(身高 == 1)’) 增添新的一列或者更新一列的数据 tj_df.assign //用法不明 以一定的规则改变原来的列的内容。比如表格男女那一栏男性使用0代替而女性使用1代替 df = df.replace(“male”, 0).replace(“female”, 1) 使用一定的策略来填补一列中的空缺 df[“age”].fillna(df.age.median(), inplace=True)//中位数 df[“age”].fillna(df.age.mean(), inplace=True)//平均值 df[“age”].fillna(df.age.mode(), inplace=True)//众数 为了统计的便捷需要删去一些列或者合并两个列的数据等操作 df[“familySize”] = df[“sibsp”] + df[“parch”] + 1 //新建familySize列使得该列数据等于另外两个列的数据和再加1 dfg = df.drop([‘体重’],axis=1) //删去不需要的列 axis=1在列这一维度进行操作</p>
+<p>注意，以上操作均对原数据无任何影响</p>
+<p>画图部分 引入包 import matplotlib.pyplot as plt</p>
+<p>基础操作 plt.show()#输出图片 plt.title(“789”)#图表标题 plt.xlabel(“456”)#x轴标题 plt.ylabel(“123”)#y轴标题</p>
+<p>画直方图(x = [1,2,3]) plt.hist(x) 画直方图相关参数 plt.hist(x,bins=16)#设定有16根柱子，默认值是10 plt.hist(x,range=(50, 100))#x轴的范围，默认是全部显示 plt.hist(x, cumulative=True)#累计柱状图，目前还不知道是什么意思 plt.hist(x, bottom=30)#确定纵坐标的数值从何处开始此时每个柱子都会加上这个值 plt.hist(x, log=True)#纵坐标使用对数表示 plt.hist(x, rwidth=0.2)#每根柱子的宽度</p>
+<p>画散点图(x = [1,2,3],y = [1,2,3]) plt.scatter(x, y,s=100)#点的大小，默认值为20 plt.scatter(x, y,c=“pink”)#点的颜色 plt.scatter(x, y,s=100,marker=“*“)#点的形状范围是数字（marker=1）或个别符号（marker=”o”） plt.scatter(x, y,linewidths=2)#点的边缘线的粗细 plt.scatter(x, y,edgecolors=“orange”)#点的边缘线的颜色 plt.scatter(x, y,alpha=0.1)#点的透明度</p>
+<p>画柱状图 a = [1, 2, 3, 4, 5] b = [100, 200, 300, 400, 500] plt.bar(a, b)#前一个位置为横轴，后一个位置为纵轴 plt.show() plt.bar(a, b, width=0.9)#柱子的粗细，默认为0.8，为1时柱子之间将没有空隙 plt.bar(a, b, color=“#1E7F00”)#柱子的颜色，所选值为’red’或”#1E7F00” plt.bar(a, b, linewidth=4,edgecolor=“#CC4959”)#柱子边框线的颜色和粗细</p>
+<p>画出统计数据</p>
+<p>样例 import seaborn as sns import matplotlib.pyplot as plt</p>
+<p>titanic = sns.load_dataset(“titanic”) sns.countplot(x=“class”, data=titanic) plt.show()</p>
+<p>numpy部分</p>
+<p>引入numpy import numpy as np 计算数组x的标准偏差 a = np.std(x) 计算数组x的和 a = np.sum(x) 计算数组x的平均数 a = np.average(x) 平均 50, 標準偏差 10 の正規乱数を1,000件生成 x = np.random.normal(50, 10, 1000)</p>
+<p>seaborn部分</p>
+<p>x和y轴的命名 g.set_ylabels(“xxx”) g.set_xlabels(“xxx”) 如果没有命名默认统计数据的名字</p>
+<p>引入其自身携带的十几个数据集 df = sns.load_dataset(“titanic”)</p>
+<p>seaborn本身包含了很多整理好的数据集，同时也包含了一些方法可以直接使用</p>
+<p>sns.countplot 将 单一类别的数据相加</p>
+<p>sns.countplot(x=“abc”, data=‘asd’)#前为列名，后为表名 选择csv文件的一列，统计其中各个数据的数量并画出来 sns.countplot(x=“class”, hue=“sex”,data=titanic) 选择class列，但按照男女进行分类显示 sns.countplot(x=“class”, order=[‘Second’, ‘First’, ‘Third’], data=titanic) 选择class列，统计表的列按照指定顺序排序 sns.countplot(x=“class”, hue=“sex”, hue_order=[‘female’,‘male’], data=titanic) 对男女分类进行排序 sns.set_style(“whitegrid”) 为图表增加横线 sns.countplot(x=“class”,hue=“sex”,palette=“Set1”, data=titanic) 使用预定配色，对于多个柱子的柱状图</p>
+<p>seaborn.catplot 是一个将分类图绘制到FacetGrid上图级别接口。 可以绘制七种图形 sns.catplot(x=“class”, y=“survived”, hue=“sex”, data=titanic,height=6, kind=“bar”, palette=“muted”) height：每个刻面的高度（以英寸为单位）。</p>
+<p>sns.barplot 柱状图 sns.barplot(x=‘class’,y=‘survived’,data=a) 他有两个未知数，还能使用hue</p>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_jinja2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="jinja2笔记">jinja2笔记</h1>
+<p>官方文档地址</p>
+<p><a href="https://jinja.palletsprojects.com/en/3.0.x/templates/?highlight=round#jinja-filters.round">Template Designer Documentation — Jinja Documentation (3.0.x) (palletsprojects.com)</a></p>
+<p>注意： 该模板只能在网页生成时将代码放置于页面中。在页面加载完成后该模板就会失效，不再起作用。</p>
+<h2 id="macro">macro</h2>
+<p>使用macro定义一个函数，可以在之后调用它</p>
+<pre class="jinja2"><code>{%macro showinfo(info)%} 
+这是{{info}}！！！&lt;br /&gt; 
+{%endmacro%}
+
+{%for info in infos%}
+{{showinfo(info)}}
+{%endfor%}</code></pre>
+<h2 id="扩展">扩展</h2>
+<p>目前提供i18n扩展</p>
+<h2 id="条件渲染">条件渲染</h2>
+<p>可以用<code>if</code>来考虑渲染哪一部分的内容。</p>
+<pre><code>{% if user.bio %}
+    &lt;i&gt;{{ user.bio }}&lt;/i&gt;
+{% else %}
+    &lt;i&gt;This user has not provided a bio.&lt;/i&gt;
+{% endif %}</code></pre>
+<h2 id="过滤器">过滤器</h2>
+<h3 id="replace">replace</h3>
+<p>jinja的过滤器具有强大的功能，且可以嵌套。具体查阅资料。</p>
+<pre><code>{{ &quot;hello world&quot; | replace(&#39;world&#39;,&#39;daxin&#39;) | upper }}
+
+# HELLO DAXIN</code></pre>
+<h3 id="round">round</h3>
+<pre><code>{{ 42.55|round }}
+    -&gt; 43.0
+{{ 42.55|round(1, &#39;floor&#39;) }}
+    -&gt; 42.5
+{{ 42.55|round|int }}
+    -&gt; 43</code></pre>
+<h2 id="全局变量">全局变量</h2>
+<h2 id="with">with</h2>
+<p>在一个with方块中声明的变量其作用域只在该方块内</p>
+<pre class="jinja2"><code>{% with %}
+
+{% endwith %}</code></pre>
+<h2 id="变量的相加减">变量的相加减</h2>
+<pre><code>{% set num = 0 %}
+{% set num = num + 1 %}
+
+{% set num = 0 %}
+{% set temp = 1 %}
+{% set num = num + temp %}</code></pre>
+<p>以上这种两个变量之间的相加减都是不行的。需要新开辟一个全局存储的容器来实现跨越for循环来传递数值</p>
+<p>以下是官方文档示范</p>
+<pre><code>这样做的主要目的是允许将值从循环体内部传送到外部作用域。 初始值可以作为 dict、关键字参数或两者都提供（与 Python 的 dict 构造函数相同的行为）： 
+
+{% set ns = namespace(found=false) %}
+{% for item in items %}
+    {% if item.check_something() %}
+        {% set ns.found = true %}
+    {% endif %}
+    * {{ item.title }}
+{% endfor %}
+Found item having something: {{ ns.found }}</code></pre>
+<p>其他相关信息鉴于</p>
+<h2 id="for循环中的变量">for循环中的变量</h2>
+<p>在for循环中，有一系列好用的变量用不着自己实现</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">loop.index</td>
+<td style="text-align: left;">The current iteration of the loop. (1 indexed)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loop.index0</td>
+<td style="text-align: left;">The current iteration of the loop. (0 indexed)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">loop.revindex</td>
+<td style="text-align: left;">The number of iterations from the end of the loop (1 indexed)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loop.revindex0</td>
+<td style="text-align: left;">The number of iterations from the end of the loop (0 indexed)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">loop.first</td>
+<td style="text-align: left;">True if first iteration.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loop.last</td>
+<td style="text-align: left;">True if last iteration.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">loop.length</td>
+<td style="text-align: left;">The number of items in the sequence.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loop.cycle</td>
+<td style="text-align: left;">A helper function to cycle between a list of sequences. See the explanation below.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">loop.depth</td>
+<td style="text-align: left;">Indicates how deep in a recursive loop the rendering currently is. Starts at level 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loop.depth0</td>
+<td style="text-align: left;">Indicates how deep in a recursive loop the rendering currently is. Starts at level 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">loop.previtem</td>
+<td style="text-align: left;">The item from the previous iteration of the loop. Undefined during the first iteration.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">loop.nextitem</td>
+<td style="text-align: left;">The item from the following iteration of the loop. Undefined during the last iteration.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">loop.changed(*val)</td>
+<td style="text-align: left;">True if previously called with a different value (or not called at all).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="模板继承">模板继承</h2>
+<p>有<code>include</code>和<code>extends</code>两种方法。比如网页的外观骨架是一直不变的，但是内容是变化的。<code>include</code>写在骨架之中来引入内容页面，而<code>extends</code>写在内容页面之中把骨架套在自己身上。</p>
+</body>
+</html>

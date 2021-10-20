@@ -1,0 +1,174 @@
+<!--首要方格-->
+<header>
+    <h1>シャハイコウのホームページ</h1>
+</header>
+<main>
+    <div class="title">
+        <h2>全体概要</h2>
+    </div>
+    <div class="b1">
+        <!--概况-->
+        <div class="b2">
+            <div class="b2-2">
+                <p>全体概要</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('guide.guide1') }}" target="_blank">この個人ホームページの設計の概況、使うの技術</a>
+            </div>
+        </div>
+        <!--概况-->
+        <div class="b2">
+            <div class="b2-2">
+                <p>GitHub</p>
+            </div>
+            <div class="b2-1">
+                <a href="https://github.com/xiepeiheng" target="_blank">GitHub個人HP</a>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="title">
+        <h2>完成したプロジェクト</h2>
+    </div>
+    <!--完成的项目-->
+    <div class="b1">
+        <!--新冠病毒-->
+        <div class="b2">
+            <div class="b2-2">
+                <p>新型コロナウイルス可視化システム</p>
+            </div>
+            <div class="b2-1">
+                <a href="http://www.silyahuukou.cn:9001/picture" target="_blank">大学の卒業設計</a>
+            </div>
+        </div>
+        <!--机器检修-->
+        <div class="b2">
+            <div class="b2-2">
+                <p>機械の故障と運行状況の可視化システム</p>
+            </div>
+            <div class="b2-1">
+                <a href="http://www.silyahuukou.cn:9002/down" target="_blank">インターンシップ時の成果</a>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="title">
+        <h2>ノートとブログ</h2>
+    </div>
+    <!--日志方格-->
+    <div class="b1">
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>ブログ</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('diary.diary1') }}" target="_blank">時間順の個人ログ</a>
+            </div>
+        </div>
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>その他</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('important.important1') }}" target="_blank">その他のこと</a>
+            </div>
+        </div>
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>コンピューターノート</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('computer.computer1') }}" target="_blank">プログラミング言語で分類される</a>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="title">
+        <h2>特設サイト</h2>
+    </div>
+    <!--特设网页-->
+    <div class="b1">
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>大学卒業記念特設サイト</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('graduation.graduation') }}" target="_blank">大学の最後の生活を写真で記録した</a>
+            </div>
+        </div>
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>レクリエーション活動記念</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('culture.cultureindex') }}"
+                    target="_blank">今年度の見た作品のまとめ。今、アニメしかない。以降は本とゲームなどの種類が加える</a>
+            </div>
+        </div>
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <div>戦艦の歴史</div>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('bb.bb') }}" target="_blank">ワシントン海軍軍縮条約各締約国戦艦の発展の歴史</a>
+            </div>
+        </div>
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>ギャラリー</p>
+            </div>
+            <div class="b2-1">
+                <a href="{{ url_for('gallery.gallery1') }}" target="_blank">いままでペンタブレットで描いた絵</a>
+            </div>
+        </div>
+        <!---->
+        <div class="b2">
+            <div class="b2-2">
+                <p>音乐收集</p>
+            </div>
+            <div class="b2-1">
+                <a href="#">いままで聴いた好きな歌とライトミュージック（工事中）</a>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+
+    <div class="title">
+        <h2>ほかのリンク</h2>
+    </div>
+    <!--完成的项目-->
+    <div class="b1">
+        <!--新冠病毒-->
+        <div class="b2">
+            <div class="b2-2">
+                <p>Mini Tokyo 3D</p>
+            </div>
+            <div class="b2-1">
+                <a href="https://minitokyo3d.com/" target="_blank">首都圏のリアルタイム電車状態地図</a>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+
+</main>
+<footer>
+    <table>
+        <tr>
+            <td>by the</td>
+            <td><img src="{{ url_for('static', filename='common/ubuntu-logo.png', _external=True) }}"></td>
+            <td>and</td>
+            <td><img src="{{ url_for('static', filename='common/flask-logo.png', _external=True) }}"></td>
+        </tr>
+    </table>
+</footer>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>娱乐活动回顾2019</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="2019.css">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.a1').mouseenter(function () {
+                $('.chaward', this).css("color", 'rgb(235,57,73)');
+                $('.jpaward', this).css("color", 'rgb(235,57,73)');
+                // $('img',this).css('opacity', 0.8);
+                $('.a2', this).css('border-color', 'rgb(235,57,73)');
+            })
+            $('.a1').mouseleave(function () {
+                $('.chaward', this).css("color", 'black');
+                $('.jpaward', this).css("color", 'black');
+                // $('img',this).css('opacity', 1);
+                $('.a2', this).css('border-color', 'rgb(245, 245, 245)');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="page-header1">
+        <ul>
+            <li><a href="{{ url_for('culture.culture2020') }}">2020年<br>第二回</a></li>
+            <li><a href="{{ url_for('culture.culture2019') }}">2019年<br>第一回</a></li>
+            <li><a href="{{ url_for('culture.cultureindex') }}">概况<br>全体概要</a></li>
+        </ul>
+    </div>
+    <!--简介框-->
+    <div class="first">
+        <h1>2019年 第一届 动画部门 获奖作品</h1>
+        <br>
+        <h3>2019年　第 1 回　アニメーション部門　受賞作品</h3>
+    </div>
+    <!-- <div class="page-header2"></div> -->
+
+    <!-- 前言 -->
+    <div class="second">
+        <h2>前言 序文</h2>
+        <p>作为一个之前没有看过动画的人。因为大学时在计算机专业课之外学习了日语。所以想要做一些事情来练习和巩固语言。所以做了以下三件事，学唱日语歌，买了一本日本史，挑选了一部动画来看看日本引以为傲的动画到底是什么样子。看完之后对这种讲故事的方法颇感兴趣。因此决定去，了解到了日本和其它国家的更多优秀的作品，从此成为了动画爱好者。</p>
+        <p>相对于文化产业中的书籍，电影，游戏等来说。我认为动画有其特别的地方。通过将生意和画面相结合，摆脱了摄影机等设备上的限制。动画创作者唯一的敌人就是自己的想象力。因此，无论动画制作工具的便利性的好坏，动画业界从创立到现在，优秀的作品层出不穷。除此之外，并非一定要成为业界人员，谁都可以去制作动画。很多优秀的人才从自制动画起步，最后成为了行业专家。因此，这样“自由”的动画是我理想中的创作形式。</p>
+        <br>
+        <p>日本のテレビアニメーションを見たことがない人として、大学でコンピューター専攻の知識以外日本語も勉強して、日本語を練習するために何かしてほしいと思った。だから、大学二年生の時、日本語の歌の練習、日本歴史相関の本（買った本の名前は「Japan: A Modern History」James L.McClain 著）を読む、日本のテレビアニメーションを見る、以上の三っつのことを日本語の練習と日本文化の理解二つの目標ためのやり方をとしてやった。当時選んだアニメは「Re:ゼロから始める異世界生活」です。このアニメを見た後で、このような物語を話の仕方に興味があった。そして、日本といろいろな国の部分の優秀なアニメ作品を見た、アニメファンになった。</p>
+        <p>コンテンツ産業の中の本、映画、ゲームなどに比べて、アニメは特別なところがあると思います。声、画面を結びつけて、カメラなどの創作の設備の上での制限を突破して、アニメ創作者は広い自由がある、一つだけの束縛は自分の想像力です。だから、アニメの制作の工具の便利性の発展を問わず、アニメ業界の始めたからいままで、すばらしい作品が次々と生まれた。これ以外に、業界の一員になる必要なく、誰でもアニメの制作するのはできる。いろいろな優秀なアニメ人材は自制アニメから最後に専門家になった。だから、このような「自由」のアニメが理想的な創作の形と思います。</p>
+    </div>
+
+    <!--参评作品列表-->
+    <div class="table">
+        <h2>选择范围 選考対象</h2>
+            <br>
+            <table>
+                <tr>
+                    <th>中文名称</th>
+                    <th>日本語の名前</th>
+                    <th>中文名称</th>
+                    <th>日本語の名前</th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-weight: bold;">TV动画部分 テレビアニメーション</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>CLANNAD</td>
+                    <td>CLANNAD</td>
+                    <td><span class="star">★ </span>星之梦</td>
+                    <td>planetarian</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>Little Busters!</td>
+                    <td>リトルバスターズ</td>
+                    <td>Angel Beats!</td>
+                    <td>Angle Beats!</td>
+                </tr>
+                <tr>
+                    <td>Rewrite</td>
+                    <td>Rewrite</td>
+                    <td><span class="star">★ </span>月刊少女野崎君</td>
+                    <td>月刊少女野崎くん</td>
+                </tr>
+                <tr>
+                    <td>Kanon</td>
+                    <td>Kanon</td>
+                    <td>从零开始的异世界生活</td>
+                    <td>Re:ゼロから始める異世界生活</td>
+                </tr>
+                <tr>
+                    <td>在下坂本，有何贵干？</td>
+                    <td>坂本ですが?</td>
+                    <td><span class="star">★ </span>高分少女</td>
+                    <td>ハイスコアガール</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>凉宫春日的忧郁</td>
+                    <td>涼宮ハルヒの憂鬱</td>
+                    <td><span class="star">★ </span>白箱</td>
+                    <td>SHIROBAKO</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>冰菓</td>
+                    <td>氷菓</td>
+                    <td>工作细胞</td>
+                    <td>はたらく細胞</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>魔法少女小圆</td>
+                    <td>魔法少女まどか☆マギカ</td>
+                    <td>樱花庄的宠物女孩</td>
+                    <td>さくら荘のペットな彼女</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>中二病也要谈恋爱</td>
+                    <td>中二病でも恋がしたい!</td>
+                    <td>小林家的龙女仆</td>
+                    <td>小林さんちのメイドラゴン</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>玉子市场</td>
+                    <td>たまこまーけっと</td>
+                    <td>寒蝉泣鸣之时</td>
+                    <td>ひぐらしのなく頃に</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>擅长捉弄的高木同学</td>
+                    <td>からかい上手の高木さん</td>
+                    <td>学园孤岛</td>
+                    <td>がっこうぐらし!</td>
+                </tr>
+                <tr>
+                    <td>Charlotte</td>
+                    <td>Charlotte</td>
+                    <td>埃罗芒阿老师</td>
+                    <td>エロマンガ先生</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>日常</td>
+                    <td>日常</td>
+                    <td>青春猪头少年不会梦到怀春美少女</td>
+                    <td>青春ブタ野郎はゆめみる少女の夢を見ない</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-weight: bold;">剧场版动画部分 劇場アニメーション</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>凉宫春日的消失</td>
+                    <td>涼宮ハルヒの消失</td>
+                    <td><span class="star">★ </span>玉子爱情故事</td>
+                    <td>たまこラブストーリー</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>风之谷</td>
+                    <td>風の谷のナウシカ</td>
+                    <td><span class="star">★ </span>千与千寻</td>
+                    <td>千と千尋の神隠し</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>天空之城</td>
+                    <td>天空之城</td>
+                    <td><span class="star">★ </span>魔女宅急便</td>
+                    <td>魔女の宅急便</td>
+                </tr>
+                <tr>
+                    <td>大侦探皮卡丘</td>
+                    <td>名探偵ピカチュウ</td>
+                    <td><span class="star">★ </span>企鹅公路</td>
+                    <td>ペンギン・ハイウェイ</td>
+                </tr>
+                <tr>
+                    <td>夏目友人帐</td>
+                    <td>夏目友人帳 ～うつせみに結ぶ～</td>
+                    <td><span class="star">★ </span>春宵苦短，少女前进吧</td>
+                    <td>夜は短し歩けよ乙女</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>声之形</td>
+                    <td>聲の形</td>
+                    <td>若能与你共乘于波涛之上</td>
+                    <td>きみと、波にのれたら</td>
+                </tr>
+                <tr>
+                    <td>青春猪头少年不会梦到怀春美少女</td>
+                    <td>青春ブタ野郎はゆめみる少女の夢を見ない</td>
+                    <td><span class="star">★ </span>天气之子</td>
+                    <td>天気の子</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>中二病也要谈恋爱！ -Take On Me-</td>
+                    <td>中二病でも恋がしたい！ －Take On Me－</td>
+                    <td>命运之夜——天之杯：恶兆之花</td>
+                    <td>Fate/stay night [Heaven's Feel] I. presage flower</td>
+                </tr>
+                <tr>
+                    <td>命运之夜——天之杯II ：迷失之蝶</td>
+                    <td>Fate/stay night [Heaven's Feel] II.lost butterfly</td>
+                    <td><span class="star">★ </span>朝花夕誓——于离别之朝束起约定之花</td>
+                    <td>さよならの朝に约束の花をかざろう</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-weight: bold;">网络配信动画 ネット配信動画</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>银翼杀手2022</td>
+                    <td>ブレードランナー ブラックアウト2022</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+    </div>
+
+    <!-- 页面右下角固定区域 -->
+    <div class="foot1"><a href="#">↑<a></div>
+    <div class="foot2">
+        背景图片相关作品：CLANNAD<br>
+        背景画像関する作品：CLANNAD
+    </div>
+
+
+    <!--最佳动画-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳动画</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>CLANNAD</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天气之子</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天空之城</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>CLANNAD</td>
+                </tr>
+            </table>
+            <br>
+            <div class="jpaward">最優秀アニメ賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>CLANNAD</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天気の子</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天空之城</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>CLANNAD</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/1.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>淋漓尽致的表现出了家族之间的和谐的氛围，被家族成员的顽强的精神的力量所感动。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>家族の間の和やかの雰囲気を余すところなく表す、家族成員の根性がある精神的な力を感動された。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--最佳剧本-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳剧本</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>春宵苦短，少女前进吧</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>寒蝉泣鸣之时</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天气之子</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>春宵苦短，少女前进吧</td>
+                </tr>
+            </table>
+            <br>
+            <div class="jpaward">脚本賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>夜は短し歩けよ乙女</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ひぐらしのなく頃に</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天気の子</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>夜は短し歩けよ乙女</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/2.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>以京都大学作为舞台，上演了一连串不可思议的故事。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>京大を舞台にして、一連の不思議な物語を発生した。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2018/animation/works/21anj_Night_Is_Short_Walk_on_Girl/">2018年 第二十一回 審査委員会推薦作品</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--最佳摄影-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳摄影</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>天气之子</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>企鹅公路</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>声之形</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>天气之子</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">撮影賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>天気の子</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ペンギン・ハイウェイ</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>聲の形</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>天気の子</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/3.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>对于下雨天气的光影处理十分到位。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>雨と曇りの場面で太陽光の処理の効果はすばらしいです。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2020/animation/works/Weathering_With_You/">2020年 第二十三回 ソーシャル・インパクト賞</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!--最佳作画-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳作画</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>冰菓</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>春宵苦短，少女前进吧</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天气之子</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>春宵苦短，少女前进吧</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">作画賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>氷菓</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>夜は短し歩けよ乙女</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天気の子</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>夜は短し歩けよ乙女</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/2.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>汤浅政明导演再次向我们完美展示了他的特别的作画风格。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>湯浅政明監督は自分の特別な作画の様式がもう一度私たちに完璧な示せる。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2018/animation/works/21anj_Night_Is_Short_Walk_on_Girl/">2018年 第二十一回 審査委員会推薦作品</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳背景音乐-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳背景音乐</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>CLANNAD（潮鸣）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>魔法少女小圆（Sis puella magica）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天气之子（花火大会）</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>CLANNAD（潮鸣）</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">音楽賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>CLANNAD（潮鳴）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>魔法少女まどか☆マギカ（Sis puella magica）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>天気の子（花火大会）</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>CLANNAD（潮鳴）</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/1.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>这首背景音乐出现的时间总是很恰当，很有效果的塑造出悲伤的气氛。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>このBGMはいつも適当な時に流される。効果的な悲しい雰囲気を作る。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳主题曲-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳主题曲</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>CLANNAD（だんご大家族）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>高分少女（アンノウン・ワールドマップ）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>Little Busters!（Song for friends）</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>CLANNAD（だんご大家族）</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">主題歌賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>CLANNAD（だんご大家族）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ハイスコアガール（アンノウン・ワールドマップ）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>リトルバスターズ（Song for friends）</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>CLANNAD（だんご大家族）</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/1.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>从歌词中感受到了家庭成员之间的羁绊，和动画的主题相一致。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>歌詞の中で家族成員の間の絆を感受した、アニメのテーマと一致する。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最具魅力的角色-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最具魅力的角色</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>春宵苦短，少女前进吧（黑发少女）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>CLANNAD（古河渚）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>玉子市场（北白川玉子）</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>CLANNAD（古河渚）</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">魅力的なキャラクター</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>夜は短し歩けよ乙女（黒髪の乙女）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>CLANNAD（古河渚）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>たまこまーけっと（北白川 たまこ）</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>CLANNAD（古河渚）</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/1.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>作者完美的刻画了一个身体上柔弱但是精神上务必坚强的角色。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>作者は体が弱い、でも性格が強いキャラクターを完璧に描きました。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳美术-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳美术</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>魔法少女小圆</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>冰菓</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>若能与你共乘于波涛之上</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>魔法少女小圆</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">美術賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>魔法少女まどか☆マギカ</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>氷菓</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>きみと、波にのれたら</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>魔法少女まどか☆マギカ</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/6.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>在背景的创作中采用拼贴的风格，给观众留下深刻印象</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>背景画像の制作でコラージュの方法を使って、視聴者に深い印象を与える。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2011/animation/works/15an_PUELLA_MAGI_MADOKA_MAGICA/">2011年 第十五回 大赏</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳服装设计-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳服装设计</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>冰菓</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>中二病也要谈恋爱</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>声之形</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>冰菓</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">衣裳デザイン賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>氷菓</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>中二病でも恋がしたい!</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>聲の形</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>氷菓 </td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/7.jpg" style="width: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>学生校服的色调的设计令人印象深刻。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>学生の制服の色調のデザインは印象的です。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳喜剧-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳喜剧</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>日常</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>月刊少女野崎君</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>擅长捉弄的高木同学</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>日常</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">コメディアニメ賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>日常</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>月刊少女野崎くん</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>からかい上手の高木さん</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>日常</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/4.jpg" style="width: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>在无法预测的地方引人发笑。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>予測範囲以外のところで人を笑わせる。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳爱情动画-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳爱情动画</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>玉子爱情故事</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>中二病也要谈恋爱</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>CLANNAD</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>玉子爱情故事</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">恋愛アニメ賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>たまこラブストーリー</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>中二病でも恋がしたい!</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>CLANNAD</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>たまこラブストーリー</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2019/5.jpg" style="height:100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>细腻的刻画了一个对恋爱反应迟钝的少女的内心。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>恋愛に鈍感な少女の心を細やかな描く。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2014/animation/works/18an_Tamako_love_story/">2014年 第十八回 新人赏</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

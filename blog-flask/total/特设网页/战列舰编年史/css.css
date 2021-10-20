@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 760px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+main{
+    margin: 30px auto;
+    width: 760px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+#main3{
+    width: 760px;
+    height: 8000px;
+}
+footer{
+    padding: 20px;
+    width: 760px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 30px auto;
+    font-size: small;
+}
+footer p{
+	text-indent:2em;
+    line-height: 1.5em;
+} 

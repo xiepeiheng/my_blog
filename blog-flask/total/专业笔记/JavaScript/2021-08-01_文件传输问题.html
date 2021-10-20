@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_文件传输问题</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="使用ajax向flask传值">使用Ajax向Flask传值</h1>
+<h2 id="基本结构">基本结构</h2>
+<pre><code>$.ajax({
+    url: &#39;/ajax&#39;,
+    type:&#39;post&#39;,
+    data : time1 + time2,
+    dataType: &#39;json&#39;, //指定了返回数据的格式。一般无需指定，浏览器会自己判断
+    contentType:&#39;application/json&#39;, //指定了向服务器发送的数据的格式，针对不同的格式，flask读取数据的方法也不一样。在使用默认格式的情况下，flask使用request.form[&#39;a&#39;]的方法读取数据
+    success: function (data) {
+        console.log(data)
+    },
+    error: function () {
+        console.log(&#39;发生故障&#39;)
+    }
+})</code></pre>
+<p>在没有设置的情况下，请求标头中的<code>Content-Type</code>的默认值如下</p>
+<pre><code>Content-Type: application/x-www-form-urlencoded; charset=UTF-8</code></pre>
+<h2 id="get">get</h2>
+<pre><code>window.open(&#39;http://127.0.0.1:5000/stoppage_data/?&#39; + &#39;a=&#39; + time1 + &#39;&amp;b=&#39; + time2 + &#39;&amp;c=&#39; + crew + &#39;&amp;d=&#39; + procedure + &#39;&amp;e=&#39; + device + &#39;&amp;f=&#39; + fault);</code></pre>
+<p>必须使用<code>?</code>和<code>&amp;</code>作为起始和分开的标志，这样可以以字典的形式读取。<code>flask</code>端也无需在修饰器中加入<code>&lt;time&gt;</code>这种变量</p>
+<pre><code>@_stoppage.route(&#39;/stoppage_data/&#39;, methods=[&#39;GET&#39;])
+def stoppage3():
+    start_time = request.values.get(&quot;a&quot;)
+    stop_time = request.values.get(&quot;b&quot;)
+    crew = request.values.get(&quot;c&quot;)
+    procedure = request.values.get(&quot;d&quot;)
+    device = request.values.get(&quot;e&quot;)
+    fault = request.values.get(&quot;f&quot;)</code></pre>
+<h2 id="post">post</h2>
+<p>网页</p>
+<pre><code>$.ajax({
+    url: &#39;{{ url_for(&#39;contrast.contrast3&#39;) }}&#39;,
+    type: &#39;post&#39;,
+    data: {
+        &#39;date_type&#39;: select,
+        &#39;start&#39;: start_date,
+        &#39;stop&#39;: stop_date,
+        &#39;crew&#39;: crew
+    },
+    success: function (data) {
+        $(&quot;#zfh&quot;).html(data);
+    },
+    error: function (data) {
+        alert(&#39;出现问题&#39;)
+    }
+})</code></pre>
+<p>flask</p>
+<pre><code>@_contrast.route(&#39;/contrast/ajax2&#39;, methods=[&#39;POST&#39;])
+def contrast3():
+    date_type = request.form[&#39;date_type&#39;]
+    start = request.form[&#39;start&#39;]
+    stop = request.form[&#39;stop&#39;]
+    crew = request.form[&#39;crew&#39;]</code></pre>
+<h2 id="关于post传输照片等文件的问题">关于post传输照片等文件的问题</h2>
+<p>最早的HTTP POST是不支持文件上传的，给编程开发带来很多问题。但是在1995年，ietf出台了rfc1867,也就是《RFC 1867 -Form-based File Upload in HTML》，用以支持文件上传。所以Content-Type的类型扩充了multipart/form-data用以支持向服务器发送二进制数据。因此发送post请求时候，表单属性enctype共有二个值可选，这个属性管理的是表单的MIME编码：</p>
+<p>①application/x-www-form-urlencoded(默认值) ②multipart/form-data 其实form表单在你不写enctype属性时，也默认为其添加了enctype属性值，默认值是enctype=”application/x- www-form-urlencoded”.</p>
+<p>当需要上传文件时，需要在form 标签中包含enctype=”multipart/form-data”和method=”post”属性，表单就会以二进制形式提交到服务器 flask 通过request.form.get(“keyword”)获取上文提到的两种格式的数据，通过request.files.get(“filename”)来获取单个文件通过reuquest.files.getlist(“files[]”)来获取多个上传文件</p>
+<h2 id="基础知识">基础知识</h2>
+<h3 id="form标签中的属性">form标签中的属性</h3>
+<p>enctype 属性规定在发送到服务器之前应该如何对表单数据进行编码。</p>
+<p>最早的HTTP POST不支持文件上传，给编程开发带来很多问题。所以后来Content-Type的类型扩充了multipart/form-data用以支持向服务器发送二进制数据。因此发送post请求时候，表单属性enctype共有二个值可选，这个属性管理的是表单的MIME编码：</p>
+<p>①application/x-www-form-urlencoded(默认值) ②multipart/form-data</p>
+<p>不指定该属性时，默认是1</p>
+<p>当需要上传文件时，需要在form 标签中包含enctype=”multipart/form-data”和method=”post”属性，表单就会以二进制形式提交到服务器</p>
+<p>flask 通过<code>request.form.get(&quot;keyword&quot;)</code>获取上文提到的两种格式的数据，通过<code>request.files.get(&quot;filename&quot;)</code>来获取单个文件通过<code>reuquest.files.getlist(&quot;files[]&quot;)</code>来获取多个上传文件</p>
+<p><strong>通过点击一个按钮上传一个文件和点击一个按钮上传多个文件</strong> ①设置多个<input>标签,需保证name属性值相同，服务器通过reuquest.files.getlist(“files[]”)获取这一组文件</p>
+<pre><code>&lt;input type=&quot;file&quot; name =&quot;file[]&quot;&gt;
+&lt;input type=&quot;file&quot; name =&quot;file[]&quot;&gt;
+&lt;input type=&quot;file&quot; name =&quot;file[]&quot;&gt;</code></pre>
+<p>②通过以下代码向一个添加文件按钮中添加多个文件，服务器依然通过reuquest.files.getlist(“files[]”)获取这一组文件。</p>
+<pre><code>&lt;input type=&quot;file&quot; multiple=&quot;multiple&quot; name=&quot;file[]&quot;&gt;</code></pre>
+<h2 id="http概述">HTTP概述</h2>
+<p>user-agent 就是任何能够为用户发起行为的工具。</p>
+</body>
+</html>

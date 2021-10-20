@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-08-01_jQuery</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="jquery笔记">jQuery笔记</h1>
+<h2 id="引入">引入</h2>
+<p>如果在其他文件写了jQuery，那在引入的时候就要放在引入jQuery本体的后面，因为是顺序读取的。否则会报错</p>
+<pre><code>&lt;script src=&quot;jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>所有的jQuery代码都应该写入这个内容中</p>
+<pre><code>$(document).ready(function(){
+
+});</code></pre>
+<h2 id="典型的jquery选择器">典型的jQuery选择器</h2>
+<p>可以使用全部的class选择器</p>
+<p>选取所有元素</p>
+<pre><code>$(&#39;*&#39;)</code></pre>
+<p>选取当前 HTML 元素</p>
+<p>在已经选取某元素后，再选取该元素中的元素</p>
+<pre><code>$(this)
+$(&#39;.abc&#39;, this)</code></pre>
+<p>选取 class 为 intro 的 <code>&lt;p&gt;</code>元素</p>
+<pre><code>$(&quot;p.intro&quot;)</code></pre>
+选取第一个
+<p>
+<p>元素</p>
+<pre><code>$(&quot;p:first&quot;)</code></pre>
+<p>选取第一个<code>&lt;ul&gt;</code> 元素的第一个 <code>&lt;li&gt;</code> 元素</p>
+<p>选取每个 <code>&lt;ul&gt;</code>元素的第一个 <code>&lt;li&gt;</code> 元素</p>
+<pre><code>$(&quot;ul li:first&quot;)
+$(&quot;ul li:first-child&quot;)</code></pre>
+<p>选取所有带有 href 属性的元素</p>
+<pre><code>$(&quot;[href]&quot;)</code></pre>
+<p>选取所有 target 属性值等于 “_blank” 的 <code>&lt;a&gt;</code> 元素</p>
+<pre><code>$(&quot;a[target=&#39;_blank&#39;]&quot;)</code></pre>
+<p>选取所有 target 属性值不等于 “_blank” 的 <code>&lt;a&gt;</code>元素</p>
+<pre><code>$(&quot;a[target!=&#39;_blank&#39;]&quot;)    </code></pre>
+<p>选取所有 type=“button” 的 <code>&lt;input&gt;</code> 元素 和 <code>&lt;button&gt;</code> 元素</p>
+<pre><code>$(&quot;:button&quot;)</code></pre>
+<p>选取偶数位置的 <code>&lt;tr&gt;</code> 元素</p>
+<p>选取奇数位置的 <code>&lt;tr&gt;</code> 元素</p>
+<pre><code>$(&quot;tr:even&quot;)
+$(&quot;tr:odd&quot;)</code></pre>
+<h2 id="事件">事件</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">鼠标事件</th>
+<th style="text-align: left;">键盘事件</th>
+<th style="text-align: left;">表单事件</th>
+<th style="text-align: left;">文档/窗口事件</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-click.html">click</a></td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-keypress.html">keypress</a>（键被按下）</td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-submit.html">submit</a></td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-resize.html">resize</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-dblclick.html">dblclick</a>（双击）</td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-keydown.html">keydown</a>（按下持续时）</td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-change.html">change</a>（文本被修改时，特别是输入框内）</td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-scroll.html">scroll</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-mouseenter.html">mouseenter</a>（指针进入元素时）</td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-keyup.html">keyup</a>（键被松开）</td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-focus.html">focus</a>（当元素获得焦点时）</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-mouseleave.html">mouseleave</a>（指针离开元素时）</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-blur.html">blur</a>（当元素失去焦点时）</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://www.runoob.com/jquery/event-hover.html">hover</a>（指针悬停于元素上）</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>特别注意</p>
+<p>使用<code>hover</code>其实相当于使用了<code>mouseenter</code>和<code>mouseleave</code>，使用时必须指定两个效果分别用于进入和离开，否则不起作用</p>
+<pre><code>$(document).ready(function(){
+  $(&quot;p&quot;).hover(function(){
+    $(&quot;p&quot;).css(&quot;background-color&quot;,&quot;yellow&quot;);
+    },function(){
+    $(&quot;p&quot;).css(&quot;background-color&quot;,&quot;rgba(0,0,0,0)&quot;);
+  });
+});</code></pre>
+<h2 id="on">.on()</h2>
+<p>如果因为使用<code>ajax</code>导致网页部分地方的代码发生了改变，虽然替换掉旧代码的新代码也符合可被选中的规则，但是也无法再被选中。使用该方法解决该问题</p>
+<p>如下样例，点击按钮后也可以选中新加入的内容</p>
+<pre><code>$(&quot;#btn&quot;).on(&#39;click&#39;, function () {
+
+})</code></pre>
+<p>但是，如果新传入了<code>jinja</code>模板，页面更新后导致了<code>window</code>发生改变以及<code>document</code>被重写时，就需要重新加载<code>document</code>。<code>.on()</code>方法可填入四个参数用于选择和引入额外数据等</p>
+<pre><code>$(document).on(&#39;click&#39;, &#39;.h120&#39;, function () {
+
+})</code></pre>
+<h2 id="基于jquery的好用的包">基于jQuery的好用的包</h2>
+<p>jQuery-backStretch ：定时更换页面背景</p>
+</body>
+</html>

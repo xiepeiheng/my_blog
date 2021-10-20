@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>大学毕业特设网站</title>
+    <meta charset="UTF-8">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <script src="{{ url_for('static', filename='common/jquery.backstretch.min.js', _external=True) }}"></script>
+    <link rel="stylesheet" href="./css.css">
+    <script>
+        $(document).ready(function () {
+            //背景轮播图
+            $("body").backstretch([
+                "img/bg1.jpg",
+                "img/bg2.jpg",
+                "img/bg3.jpg"
+            ], { duration: 1000 * 30 });
+            //解决时间轴高度问题
+            $(".b1").each(function () {
+                $('.b2', this).css('height', $(this).height())
+            });
+            //以天为单位时间区域高亮
+            $('.b1').mouseenter(function () {
+                $(this).css("background-color", 'rgb(255, 255, 255)');
+                $('.b2, .b2-1, .b2-last', this).css("background-color", '#5BBD2B');
+                $('.photo', this).css("border-color", '#5BBD2B');
+                $('.b2-1', this).css("color", 'rgb(255, 255, 255)');
+            })
+            $('.b1').mouseleave(function () {
+                $(this).css("background-color", 'rgba(255, 255, 255, 0.7)');
+                $('.b2, .b2-1, .b2-last', this).css("background-color", '#C2C2C2');
+                $('.photo', this).css("border-color", '#C2C2C2');
+                $('.b2-1', this).css("color", 'black');
+            })
+            //点击图片之后查看大图
+            $('img').click(function(){
+                url = $(this).attr("src")
+                window.open(url,'_blank','',true)
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <br>
+    <!--4.29-->
+    <header>
+        <h1>天津科技大学毕业纪念</h1>
+        <p>天津科技大学卒業おめでとうございます</p>
+        <br>
+        <p>2017-09-03 → 2021-07-26</p>
+        <br>
+        <p>以下是毕业前几个月的记录。背景图片分别是学校泰达校区和河西校区的图片</p>
+        <p>以降は卒業前数個月の写真です。背景画像は学校の泰達キャンパスと河西キャンパスの風景です</p>
+    </header>
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/4.29.2.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/4.29.3.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/4.29.4.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>大学的最后一场旅行——和好朋友在上海。那天的月亮很显眼。</li>
+                    <li><br></li>
+                    <li>大学の最後の旅行——上海。あの日、月はきれいです。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">4月29日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--5.21-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/5.21.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次在操场听学生唱歌</li>
+                    <li><br></li>
+                    <li>最後に運動場で学生の唄を聞きます。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">5月21日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--5.27-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/5.27.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>第一次模拟答辩</li>
+                    <li><br></li>
+                    <li>卒業論文の完成ため第一回卒論ゼミを行った</li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">5月27日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.01-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.01.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次模拟答辩</li>
+                    <li><br></li>
+                    <li>最後の卒論ゼミを行った</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月1日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.02-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.02.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次拍到宿舍前的两只猫的合影</li>
+                    <li><br></li>
+                    <li>最後に二つの猫が一緒にいる写真を撮った</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月2日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.05-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.05.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>答辩前的最后一晚，室友努力准备的状态</li>
+                    <li><br></li>
+                    <li>卒論発表会の前夜、ルームメイトと一緒に勉強した</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月5日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.10-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.10.1.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.10.2.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.10.3.jpg" style="height:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.10.4.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.10.5.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>和挚友们的毕业照</li>
+                    <li><br></li>
+                    <li>友達との卒業写真</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月10日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.14-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.14.jpg" style="height:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>送别宿舍第一位离开的成员</li>
+                    <li><br></li>
+                    <li>寮から一位離れたルームメイトを見送る（メンバー数七から六になった）</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月14日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.17-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.17.2.jpg" style="height:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>学院毕业晚会的节目单</li>
+                    <li><br></li>
+                    <li>学部の卒業パーティーのプログラム</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月17日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.21-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.21.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>学校送的蛋糕</li>
+                    <li><br></li>
+                    <li>学校からの卒業生へのケーキ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月21日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.22-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.22.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次去学校图书馆，意外发现了柜子</li>
+                    <li><br></li>
+                    <li>最後に学校の図書館への時、カード目録ケースを見つけた</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月22日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.23-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.23.2.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次去KTV，和室友せんさん合唱了大学时期唱的最后一首歌打上花火</li>
+                    <li><br></li>
+                    <li>最後にルームメイトとカラオケに行った、せんさんと打上花火を歌った</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月23日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.24-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.24.1.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次在学校餐厅用餐</li>
+                    <li><br></li>
+                    <li>最後に学校の食堂で食事をした（黄メン鶏米飯）</li>
+                </ul>
+            </div>
+            <div class="photo">
+                <img src="img/6.24.2.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.24.3.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.24.4.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>毕业典礼（第三张图右起第五个）</li>
+                    <li><br></li>
+                    <li>卒業式（三番目の写真が右から5番目は私です）</li>
+                </ul>
+            </div>
+            <div class="photo">
+                <img src="img/6.24.5.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>最后一次散伙饭</li>
+                    <li><br></li>
+                    <li>送別会</li>
+                </ul>
+            </div>
+            <div class="photo">
+                <img src="img/6.24.6.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>送别せんさん和王さん</li>
+                    <li><br></li>
+                    <li>王さんとせんさんを見送る</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月24日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.25-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.25.1.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.25.2.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.25.3.jpg" style="height:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.25.4.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.25.5.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>和林さん，耿さん夜游校园</li>
+                    <li><br></li>
+                    <li>林さん、さんと三人夜に学校で以前勉強のところに遊んだ。</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2">
+            <div class="b2-1">6月25日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--6.26-->
+    <div class="b1">
+        <div class="b3">
+            <div class="photo">
+                <img src="img/6.26.1.jpg" style="height:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.26.3.jpg" style="width:100%">
+            </div>
+            <div class="photo">
+                <img src="img/6.26.4.jpg" style="width:100%">
+            </div>
+            <div class="text">
+                <ul>
+                    <li>离别</li>
+                    <li><br></li>
+                    <li>別れ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="b2-last">
+            <div class="b2-1">6月26日</div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <!--尾声-->
+    <footer>
+        <p>老实说，直到现在写下这段文字的时候，我也对已经毕业了这件事没什么实感。已经是八月下旬了，但在心里仍然有我会在九月初新学期和室友们见面这种不真实的感觉。从这种幻觉中稍微清醒过来之后，才意识到这是不可能的。但心情也没有什么太大的波动。可能因为我就是这样一个反应迟缓的人。就连临走的时候，唯一令我稍有感触的场景就是林海葳帮我将行李搬运上车之后开始抹眼泪。</p>
+        <p>実は、いままでこの内容を書いた時、自分はもう卒業したのことは実感が湧かない。心の中では、九月にまだルームメイトたちと学校で会うという感じる。そんな幻想から覚めたら、これは不可能なことと気づいた。私はこのような鈍感な人だからかもしれない。学校から別れた時、一つだけの泣きたい場面は林さんが荷物を車に運んでくれて後で涙を流した時。</p>
+        <br>
+        <p>离别这件事并非总是轰轰烈烈的发生在最后时刻，而是从一件事情进行过半就静悄悄的开始了。最后一次和同学去那家店铺竟然是两年以前的事情了。最后一次乘坐校门口的电车出去玩已经是一年半以前的事情了。当自己还沉浸于做某件事情的快乐的时候，其实那已经是最后一次了。</p>
+        <p>別れというものは、いつでも最後の時だけ発生するものではない。しばらく前から静かに始めます。最後に友達とあの店に行くのは二年前のことです。最後に学校付近の電車に乗って遊びに行くのはもう一年半前です。自分が何かをする楽しみに浸っている時は、それはもう最後です。</p>
+        <br>
+        <p>在高中前的那个暑假，获得了为期半个月的赴英旅游的机会。在快乐的度过了一个星期之后，我开始发愁如何怎么做才能留下更多美好的记忆呢，于是我瞪大眼睛，贪婪的将每一处景色都收入眼底，触摸允许触摸景物，将触觉刻进脑海中，用毛孔感受气息……直至七年后的今天，当时的部分场景仍然历历在目。但当时，在行程结束前往机场的路上，望着来时的风景，总是感到怅然若失。</p>
+        <p>高校生になった前の夏休み期間、二週の間にイギリスへ遊びに行った。一週間を過した後で、どうすればもっといい思い出ができますか？そして私は見える景色と触るの時の触感をできるだけ全部大脳に記憶した。いままで七年を過ごした、イギリスでの一部の場面はまだ目に浮かぶのはできます。しかし、当時、ヒースロー空港に通じて帰国の時、来た時の風景を見た、悲しみになった、いい思い出の創造するのことは私は最後に完成しますか。</p>
+        <br>
+        <p>在六月初结束答辩之后，距离离校尚有20余日。在仅剩的20多天能不能在做一些特别的事情呢，实际上也没有。所以还是不要刻意去抓住什么吧，否则最终只能记住刻意抓住的那些瞬间。只要这样一直生活下去就好了。</p>
+        <p>六月の卒業発表会後で、学校から離れるの時までまだ二十日あった。私たちは思い出を創造するのことをできるますか。実は何でもしない。だから、わざと意識的に瞬間を記憶のことはしないほうがいいです。そうしないと、数年後、意識的に記憶するの瞬間だけ思い出すできるの状況になる。このまま生きていけばいいです。</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>计算机笔记</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="computer.css">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".name").click(function () {
+                a = $(this).attr("address")
+                console.log("{{ url_for('computer.computer2',a='jsk') }}".replace("jsk", a))
+                window.open("{{ url_for('computer.computer2',a='jsk') }}".replace("jsk", a));
+            });
+            $('#bt1').click(function () {
+                $('[folder1]').show()
+            });
+            $('#bt2').click(function () {
+                $('[folder1]').hide()
+            });
+            $('.folder').click(function () {
+                a = $(this).attr("folder")
+                $("[folder1=" + a + "]").toggle();
+            })
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body>
+<header>
+    <h1>计算机笔记目录</h1>
+</header>
+<div class="bt1">
+    <button id="bt1">全部展开</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="bt2">全部收回</button>
+</div>
+
+
+<main>
+    {% include './computer.html' %}
+</main>
+</body>
+</html>

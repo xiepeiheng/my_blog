@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>娱乐活动回顾2020</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="2020.css">
+
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.a1').mouseenter(function () {
+                $('.chaward', this).css("color", 'rgb(235,57,73)');
+                $('.jpaward', this).css("color", 'rgb(235,57,73)');
+                // $('img',this).css('opacity', 0.8);
+                $('.a2', this).css('border-color', 'rgb(235,57,73)');
+            })
+            $('.a1').mouseleave(function () {
+                $('.chaward', this).css("color", 'black');
+                $('.jpaward', this).css("color", 'black');
+                // $('img',this).css('opacity', 1);
+                $('.a2', this).css('border-color', 'rgb(245, 245, 245)');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="page-header1">
+        <ul>
+            <li><a href="{{ url_for('culture.culture2020') }}">2020年<br>第二回</a></li>
+            <li><a href="{{ url_for('culture.culture2019') }}">2019年<br>第一回</a></li>
+            <li><a href="{{ url_for('culture.cultureindex') }}">概况<br>全体概要</a></li>
+        </ul>
+    </div>
+    <!--简介框-->
+    <div class="first">
+        <h1>2020年 第二届 动画部门 获奖作品</h1>
+        <br>
+        <h3>2020年　第 2 回　アニメーション部門　受賞作品</h3>
+    </div>
+    <!-- <div class="page-header2"></div> -->
+
+    <!-- 前言 -->
+    <div class="second">
+        <h2>前言 序文</h2>
+        <p>创作者之所以去进行创作，大概是因为有些话想要传达给大家。但使用不同的形式来表达自己想说的话时，情况有所不同。作家可以独自掌握自己的作品，而动画创作者一般情况下会采取团队合作的方式，所以能得到一部好作品殊为不易，需要一批能理解监督想法且热情的工作人员以及宽松的外部条件。因此，在动画创作时总会因为一些条件的限制而造成永远的遗憾。所以，请给予创作者们更多的宽容和支持吧。</p>
+        <p>而作为生活在社会中的人，对生活充满热情的创作者。也必然会被自己周遭的社会环境影响。而这样的影响，有时候也会被带入作品之中。因此，一部倾尽了创作者团队心血的作品，也必然会被打上某种时代的烙印。通过这样的作品，在理解创作者的意图之外，也能一窥彼时社会的精神面貌。因此，想要研究和评价一部动画，除了关注创作者的目的和意图，其本身所处的时代也是需要研究。</p>
+        <br>
+        <p>クリエイターが創作に行くのは、皆さんに伝えたいことがあるからです。でも不同の方式を使って自分の思うを表すの時、臨むの困難は違いです。作家であれば、自分の本を書くの時、すべての内容は自分が決めるのはいいです。しかし、一般的にアニメの制作現場はグループの力を必要です。作品の最終の質量は監督自分自身決めるだけではなく、グループ全員が決めるということです。だから、監督の考えを理解できる、作品に熱心になるグループがなければ、優秀な作品はない。今、アニメの制作に対して、そんな完璧なグループとよく外部条件はめったにないので。欠陥のある作品に対しては少し許す、なぜなら監督とグループの考え方が条件の制限のでもっとも良い表現を展示できないかもしれない。</p>
+        <p>社会で生活の人間として、生活に熱心があるクリエイターは必ず自分の周りの社会環境に影響される。そして、このような影響は自分の作品の中で表すの可能性はあります。だから、グループの心血を注ぐ作品は、きっとクリエイターたち生存する時代の特徴を付ける。このような作品を通じて、クリエイターの意図をわかる以外に、その時の人々の思想を窺い知る。逆に言えば、作品を全面的に評判欲しいなら、クリエイター自身存在する時代はも研究の内容です。</p>
+    </div>
+
+
+    <!--参评作品列表-->
+    <div class="table">
+        <h2>选择范围 選考対象</h2>
+            <br>
+            <table>
+                <tr>
+                    <th>中文名称</th>
+                    <th>日本語の名前</th>
+                    <th>中文名称</th>
+                    <th>日本語の名前</th>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-weight: bold;">TV动画部分 テレビアニメーション</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>紫罗兰永恒花园</td>
+                    <td>ヴァイオレット・エヴァーガーデン</td>
+                    <td><span class="star">★ </span>狼与香辛料</td>
+                    <td>狼と香辛料</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>狼与香辛料第二季</td>
+                    <td>狼と香辛料II</td>
+                    <td><span class="star">★ </span>别对映像研出手</td>
+                    <td>映像研には手を出すな!</td>
+                </tr>
+                <tr>
+                    <td>徒然喜欢你</td>
+                    <td>徒然チルドレン</td>
+                    <td><span class="star">★ </span>四叠半神话大系</td>
+                    <td>四畳半神話大系</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>编舟记</td>
+                    <td>舟を編む</td>
+                    <td>踏切时间</td>
+                    <td>踏切時間</td>
+                </tr>
+                <tr>
+                    <td>末日时在做什么？有没有空？可以来拯救吗？</td>
+                    <td>終末なにしてますか? 忙しいですか? 救ってもらっていいですか?</td>
+                    <td>境界的彼方</td>
+                    <td>境界の彼方</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>昨日之歌</td>
+                    <td>イエスタデイをうたって</td>
+                    <td>悠久之翼</td>
+                    <td>ef - a tale of memories.</td>
+                </tr>
+                <tr>
+                    <td>悠久之翼2</td>
+                    <td>ef - a tale of melodies.</td>
+                    <td>目隐都市的演绎者</td>
+                    <td>カゲロウプロジェクト</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>新世纪福音战士</td>
+                    <td>新世紀エヴァンゲリオン</td>
+                    <td><span class="star">★ </span>三颗星彩色冒险</td>
+                    <td>三ツ星カラーズ</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>辉夜大小姐想让我告白</td>
+                    <td>かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜（第1期）</td>
+                    <td><span class="star">★ </span>辉夜大小姐想让我告白2</td>
+                    <td>かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜（第２期）</td>
+                </tr>
+                <tr>
+                    <td>化物语</td>
+                    <td>化物語</td>
+                    <td>我们仍未知道那天所看见的花的名字</td>
+                    <td>あの日見た花の名前を僕達はまだ知らない。</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>回转企鹅罐</td>
+                    <td>輪るピングドラム</td>
+                    <td><span class="star">★ </span>希尔达第一季</td>
+                    <td>ヒルダの冒険: シーズン１</td>
+                </tr>
+                <tr>
+                    <td>Just Because!</td>
+                    <td>Just Because!</td>
+                    <td>魔法少女 俺</td>
+                    <td>魔法少女 俺</td>
+                </tr>
+                <tr>
+                    <td>非洲动物上班族</td>
+                    <td>アフリカのサラリーマン</td>
+                    <td>One Room 第一季</td>
+                    <td>One Room第1期</td>
+                </tr>
+                <tr>
+                    <td>One Room 第二季</td>
+                    <td>One Room 第2期</td>
+                    <td>One Room 第三季</td>
+                    <td>One Room第3期</td>
+                </tr>
+                <tr>
+                    <td>Re：从零开始的异世界生活 第二季</td>
+                    <td>Re:ゼロから始める異世界生活 第2期</td>
+                    <td>千绪的上学路</td>
+                    <td>ちおちゃんの通学路</td>
+                </tr>
+                <tr>
+                    <td>ReLIFE</td>
+                    <td>ReLIFE</td>
+                    <td>成神之日</td>
+                    <td>神様になった日</td>
+                </tr>
+                <tr>
+                    <td>总之非常可爱</td>
+                    <td>トニカクカワイイ</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="font-weight: bold;">剧场版动画部分 劇場アニメーション</td>
+                </tr>
+                <tr>
+                    <td>烟花</td>
+                    <td>打ち上げ花火、下から見るか？　横から見るか？</td>
+                    <td>紫罗兰永恒花园外传：永远与自动手记人偶</td>
+                    <td>ヴァイオレット・エヴァーガーデン外伝- 永遠と自動手記人形-</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>HELLO WORLD</td>
+                    <td>HELLO WORLD</td>
+                    <td>薄暮</td>
+                    <td>薄暮</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>新世纪福音战士剧场版：Air /真心为你</td>
+                    <td>新世紀エヴァンゲリオン劇場版 Air/まごころを、君に</td>
+                    <td><span class="star">★ </span>知道天空有多蓝的人啊</td>
+                    <td>空の青さを知る人よ</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>新世纪福音战士新剧场版1.11：序</td>
+                    <td>ヱヴァンゲリヲン新劇場版:序</td>
+                    <td><span class="star">★ </span>新世纪福音战士新剧场版2.22：破</td>
+                    <td>ヱヴァンゲリヲン新劇場版:破</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>新世纪福音战士新剧场版3.33：Q</td>
+                    <td>ヱヴァンゲリヲン新劇場版:Q</td>
+                    <td><span class="star">★ </span>心灵想要大声呼喊</td>
+                    <td>心が叫びたがってるんだ。</td>
+                </tr>
+                <tr>
+                    <td><span class="star">★ </span>百日红-北斋小姐</td>
+                    <td>百日紅 〜Miss HOKUSAI〜</td>
+                    <td><span class="star">★ </span>未来的未来</td>
+                    <td>未来のミライ</td>
+                </tr>
+                <tr>
+                    <td>海兽之子</td>
+                    <td>海獣の子供</td>
+                    <td><span class="star">★ </span>心灵奇旅</td>
+                    <td>ソウルフル・ワールド</td>
+                </tr>
+                <tr>
+                    <td>想哭的我带上了猫的面具</td>
+                    <td>泣きたい私は猫をかぶる</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+    </div>
+
+    <!-- 页面右下角固定区域 -->
+    <div class="foot1"><a href="#">↑<a></div>
+    <div class="foot2">
+        背景图片相关作品：回转企鹅罐<br>
+        背景画像関する作品：輪るピングドラム
+    </div>
+
+
+    <!--最佳动画-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳动画</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>新世纪福音战士</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>回转企鹅罐</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四叠半神话大系</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>新世纪福音战士</td>
+                </tr>
+            </table>
+            <br>
+            <div class="jpaward">最優秀アニメ賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>新世紀エヴァンゲリオン</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>輪るピングドラム</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四畳半神話大系</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>新世紀エヴァンゲリオン</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/6.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>魔法少女まどか☆マギカ</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>魔法少女まどか☆マギカ</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2018/animation/works/21anj_Night_Is_Short_Walk_on_Girl/">2018年 第二十一回 審査委員会推薦作品</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--最佳剧本-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳剧本</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>新世纪福音战士</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>回转企鹅罐</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四叠半神话大系</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>回转企鹅罐</td>
+                </tr>
+            </table>
+            <br>
+            <div class="jpaward">脚本賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>新世紀エヴァンゲリオン</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>輪るピングドラム</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四畳半神話大系</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>輪るピングドラム</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/2.2.png" style="width: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>突如其来的恐怖袭击永远改变了三个家庭的命运。主角团们在恐袭后的伤痛和社会的恶意中最终救赎了所有人。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>突然のテロは永遠に3つの家族の運命を変えた。主人公たちは、テロ後のトラウマや社会的悪意の中で全員を救った。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2011/animation/works/15anj_mawaru-penguindrum/">2011年 第十五回 審査委員会推薦作品</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--最佳摄影-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳摄影</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>想哭的我带上了猫的面具</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>HELLO WORLD</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>紫罗兰永恒花园外传：永远与自动手记人偶</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>想哭的我带上了猫的面具</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">撮影賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>泣きたい私は猫をかぶる</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>HELLO WORLD</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ヴァイオレット・エヴァーガーデン外伝- 永遠と自動手記人形-</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>泣きたい私は猫をかぶる</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/3.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>使用光影变幻在城市上空塑造出一个奇异的猫居住的世界。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>光と影を使って，都市の空で不思議な猫の国を描く。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2021/animation/works/A_Whisker_Away/">2021年 第二十四回 優秀賞</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <!--最佳作画-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳作画</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>新世纪福音战士新剧场版1.11：序</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>紫罗兰永恒花园</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四叠半神话大系</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>新世纪福音战士新剧场版1.11：序</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">作画賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>ヱヴァンゲリヲン新劇場版:序</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ヴァイオレット・エヴァーガーデン</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四畳半神話大系</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>ヱヴァンゲリヲン新劇場版:序</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/4.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>完美的线条勾勒出了伟大的第三新东京市和激烈的战斗场面。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>完璧な線は立派な第三新東京市と激しい戦闘シーンを描き出す。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳美术-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳美术</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>化物语</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>新世纪福音战士</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>悠久之翼</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>化物语</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">美術賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>化物語</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>新世紀エヴァンゲリオン</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ef - a tale of memories.</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>化物語</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/10.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>独特的美术风格给观众留下深刻印象</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>特別な美術のスタイルは視聴者に深い印象を残った</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳背景音乐-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳背景音乐</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>新世纪福音战士（EVA-01）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>辉夜大小姐想让我告白（そういう夏）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>成神之日（夏凪ぎ-episode2 piano ver.-）</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>成神之日（夏凪ぎ-episode2 piano ver.-）</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">音楽賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>新世紀エヴァンゲリオン（EVA-01）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜（そういう夏）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>神様になった日（夏凪ぎ-episode2 piano ver.-）</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>神様になった日（夏凪ぎ-episode2 piano ver.-）</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/5.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>钢琴声响起之时，令人感到阳光流淌进心里。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>ピアノの音がすると、心に太陽の光が流れると感じる。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳主题曲-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳主题曲</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>新世纪福音战士（残酷な天使のテーゼ）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>境界的彼方（Daisy）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>昨日之歌（葵橋）</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>新世纪福音战士（残酷な天使のテーゼ）</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">主題歌賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>新世紀エヴァンゲリオン（残酷な天使のテーゼ）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>境界の彼方（Daisy）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>イエスタデイをうたって（葵橋）</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>新世紀エヴァンゲリオン（残酷な天使のテーゼ）</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/6.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>不理解歌词的具体含义，但是很受震撼。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>実は私はリリックの具体的な意味が分からない、でも印象的です。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2018/animation/works/21anj_Night_Is_Short_Walk_on_Girl/">2018年 第二十一回 審査委員会推薦作品</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最具魅力的角色-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最具魅力的角色</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>编舟记（马蹄光也）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四叠半神话大系（明石）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>回转企鹅罐（荻野目 苹果）</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>四叠半神话大系（明石）</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">魅力的なキャラクター</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>舟を編む（馬締 光也）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>四畳半神話大系（明石）</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>輪るピングドラム（荻野目 苹果）</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>四畳半神話大系（明石）</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/7.jpg" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>想要成为明石这样永远有活力，永远年轻的人。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>明石のようにいつまでも元気で、若い人になりたいです。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2010/animation/works/14an_The_Tatami_Galaxy/">2010年 第十四回 大赏</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+<!--非常设部门开始-->
+
+
+    <!--最佳喜剧-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳喜剧</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>三颗星彩色冒险</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>千绪的上学路</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>非洲动物上班族</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>三颗星彩色冒险</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">コメディアニメ賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>三ツ星カラーズ</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ちおちゃんの通学路</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>アフリカのサラリーマン</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>三ツ星カラーズ</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/8.png" style="height: 100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>展现了小朋友们在东京上野的欢乐生活。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>東京上野で住んだ小学生たちの楽しい生活を展示する。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--最佳爱情动画-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">最佳爱情动画</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>徒然喜欢你</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>悠久之翼2</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>辉夜大小姐想让我告白</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>徒然喜欢你</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">恋愛アニメ賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>徒然チルドレン</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>ef - a tale of melodies.</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>かぐや様は告らせたい〜天才たちの恋愛頭脳戦〜</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>徒然チルドレン</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/9.jpg" style="height:100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>讲述了数对相处方式完全不同的校园情侣的甜蜜日常。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>付き合い方がまったく違うの学園カップルの日常を描く。</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--人文主义-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">人文主义主题奖</div>
+            <table>
+                <tr>
+                    <th>提名：</th>
+                    <td>回转企鹅罐</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>心灵想要大声呼喊</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>新世纪福音战士</td>
+                </tr>
+                <tr>
+                    <th>获奖：</th>
+                    <td>回转企鹅罐</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">人文主義賞</div>
+            <table>
+                <tr>
+                    <th>候補作：</th>
+                    <td>輪るピングドラム</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>心が叫びたがってるんだ</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>新世紀エヴァンゲリオン</td>
+                </tr>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>輪るピングドラム</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/2.1.jpg" style="height:100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>“……但是，有些事情我们决不能忘却，失去的东西或者回来，或者再也无法恢复原状。像过去那样侧重便利性的系统设计是不被大家认可的。而反应人心的人性化设计却是必不可少的。我们决不能重蹈那样的悲剧”——出自第13集<br>在物质文明匮乏的时代，城市中基础设施的建设以经济发展的便利性为最优先选项。其实不只在基础设施中，人与人之间，人与建筑之间，都为了经济的发展做出了改变。如今，随着经济转好，经济发展是为了所有人的发展这点必须要做到。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>「…ですが、私たちには決して忘れではならないことがあります。失われたものは戻ってきた、あるいは戻り戻ったわけではないのです。かつてのシステムような利便性へのけどは許されないです。そこに、人のこころに反映させることは不可欠なのです。私たちはもう二度とあのような悲劇を繰り返してはならないのです…」ーー輪るピングドラム　第13話<br>物質の乏しい時代に，都市の中のインフラの設計は経済発展の便利性を優先した。インフラだけではなく、人間の間、人間と建築の間の関係が、全部経済発展ために変わった。今、景気がよくなるとともに、経済発展はすべての人の発展のためにということを実現してはなければならない。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="http://archive.j-mediaarts.jp/festival/2011/animation/works/15anj_mawaru-penguindrum/">2011年 第十五回 審査委員会推薦作品</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--写给动画爱好者的情书-->
+    <div class="a1">
+        <div class="a3">
+            <div class="chaward">写给动画爱好者的情书</div>
+            <table>
+                <tr>
+                    <th>获奖：</th>
+                    <td>别对映像研出手</td>
+                </tr>
+            </table>
+
+            <!--日文-->
+            <br>
+            <div class="jpaward">アニメファンたちへのラブレター</div>
+            <table>
+                <tr>
+                    <th>受賞作：</th>
+                    <td>映像研には手を出すな!</td>
+                </tr>
+            </table>
+        </div>
+        <div class="a2"><img src="img/2020/1.jpg" style="height:100%;"></div>
+        <div class="a4">
+            <table>
+                <tr>
+                    <th>获奖理由：</th>
+                    <td>三名高中生为了制作短篇动画不断奋斗的身姿令人动容。</td>
+                </tr>
+                <tr>
+                    <th>贈賞理由：</th>
+                    <td>三っつ高校生は短編アニメ制作ために続けて頑張っているの姿は私に感動させた。</td>
+                </tr>
+                <tr>
+                    <td colspan="2">メディア芸術祭での受賞状況：<a target="blank" href="https://j-mediaarts.jp/award/single/keep-your-hands-off-eizouken/">2021年 第二十四回 大賞</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

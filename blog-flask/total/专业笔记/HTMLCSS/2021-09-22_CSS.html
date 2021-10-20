@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-09-22_CSS</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="引入css的三种办法">引入CSS的三种办法</h1>
+<p>在<code>&lt;style&gt;</code>中</p>
+<pre><code>&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;</code></pre>
+<p>通过文件引入</p>
+<pre><code>&lt;link type=&quot;stylesheet&quot; href=&quot;&quot;&gt;</code></pre>
+<h1 id="常用选择器">常用选择器</h1>
+<h2 id="元素选择器">元素选择器</h2>
+<p>根据标签名称选择元素</p>
+<pre><code>p{
+
+}</code></pre>
+<h2 id="id选择器">id选择器</h2>
+<p>根据标签中的<code>id</code>属性选择元素</p>
+<pre><code>#abc{
+
+}</code></pre>
+<h2 id="类选择器">类选择器</h2>
+<p>根据标签中的<code>class</code>属性选择元素</p>
+<pre><code>.abc{
+
+}</code></pre>
+<h2 id="通配选择器">通配选择器</h2>
+<p>选择页面中的所有元素</p>
+<pre><code>*{
+
+}</code></pre>
+<h2 id="复合选择器">复合选择器</h2>
+<p><strong>交集选择器</strong></p>
+<p>选中同时符合多个条件的元素</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    div<span class="fu">.a.b.c</span>{</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">color</span>: <span class="cn">aqua</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;a b c&quot;</span><span class="kw">&gt;</span>你好<span class="kw">&lt;/div&gt;</span> //染色</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;b&quot;</span><span class="kw">&gt;</span>你好<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;c&quot;</span><span class="kw">&gt;</span>你好<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+<p>注意，在书写时元素名称必须写在类名称之前，并且多个条件之间不留空格</p>
+<p><strong>并集选择器</strong></p>
+<p>同时选择多个元素</p>
+<pre><code>&lt;style&gt;
+    div, .a, .b, .c{
+        color: aqua;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;a b c&quot;&gt;你好&lt;/div&gt; //染色
+&lt;p class=&quot;b&quot;&gt;你好&lt;/p&gt; //染色
+&lt;p class=&quot;c&quot;&gt;你好&lt;/p&gt; //染色</code></pre>
+<p>当然，可以在并级选择器中使用交集选择器的写法</p>
+<h2 id="关系选择器">关系选择器</h2>
+<h3 id="子元素选择器">子元素选择器</h3>
+<pre><code>div &gt; .abc{
+
+}</code></pre>
+<h3 id="后代元素选择器">后代元素选择器</h3>
+<pre><code>div .abc{
+
+}</code></pre>
+<p>在<code>div</code>标签内的所有<code>class</code>属性值为abc的元素都会被选择，无论是不是子元素</p>
+<h3 id="兄弟元素选择器名字存疑">兄弟元素选择器（名字存疑）</h3>
+<pre><code>p + span{
+
+}</code></pre>
+<p>自p标签<strong>所在位置往下</strong>选择兄弟之中离它最近的且标签名称为<code>span</code>的元素</p>
+<pre><code>p ~ span{
+
+}</code></pre>
+<p>自p标签<strong>所在位置往下</strong>选择兄弟之中所有标签名称为<code>span</code>的元素</p>
+<h2 id="属性选择器">属性选择器</h2>
+<h3 id="选择含有指定属性的元素">选择含有指定属性的元素</h3>
+<pre><code>p[title]{
+
+}</code></pre>
+<p><code>p</code>标签中只要有<code>title</code>属性无论属性值是什么都会被选中</p>
+<pre><code>[title]{
+
+}</code></pre>
+<p>也可以不写标签名称，任意标签含有该属性即可被选中</p>
+<pre><code>p[title=abc]{    p[title^=abc]{   p[title$=abc]{    p[title*=abc]{ 
+
+}                {                {                 {</code></pre>
+<p>分别是指定某属性为某值，指定某属性的属性值以什么为开头和以什么为结尾以及只要属性值中含有什么内容即可</p>
+<h2 id="伪类选择器">伪类选择器</h2>
+<p>伪类指的是不实际存在的类，比如一个链接的未点击，点击后等的状态，第一个子元素（此时并不确定会有几个子元素，或许一个也没有，所以称为不实际存在的类）</p>
+<p>伪类一般使用冒号开头。在使用时就和类的使用方法一致</p>
+<pre><code>:first-children  
+:last-children
+:nth-child(2)  //第二个子元素 还有以下特殊值 odd奇数个 2n偶数个 n所有
+
+:first-of-type //同类型中的第一个
+:last-of-type
+:nth-of-type()
+
+:not()  //否定伪类，不选择哪一个，可以嵌套使用
+ul &gt; li:not(:nth-child(2)) //不选择列表中的第二个子元素</code></pre>
+<h2 id="超链接的伪类">超链接的伪类</h2>
+<p>一个链接有四种形态</p>
+<pre><code>a:link{} //没访问过的链接
+a:visited{} //访问过的链接
+a:hover{}  //鼠标触碰到链接时的表现
+a:active{} //鼠标按住未松手时的表现</code></pre>
+<p>注意，这些不光可以用于链接，用于块元素等等均可，比如设置一个方块，鼠标触碰就变色</p>
+<h2 id="伪元素重要">伪元素（重要）</h2>
+<p>表示页面中一些并不真实存在的元素，比如一个段落的开头或者结尾的第一个字符。因为我并没有单独用标签将它们括起来，但可以用伪元素表示这个特殊位置的字符。所以称为并不存在的元素。</p>
+<pre><code>p::first-letter{}  //p标签中的第一个字符
+p::first-line{}   //p标签中的第一行
+p::selection{}   //p标签中用鼠标选中的内容
+
+p::after{}
+p::before{
+    content:&#39;abc&#39;
+}  //指的是标签和内容之间的区域
+&lt;p&gt;ABC&lt;/p&gt;
+指的是字母A和标签&lt;p&gt;之间的位置。因为案例中这个位置什么也没有，因此在这个选择器中写什么都不会有反应。必须在content属性中添加内容后写样式会对content中的内容添加样式
+注意，content中的内容在页面上不会被鼠标选中</code></pre>
+<h1 id="优先级">优先级</h1>
+<p>按照最优先到最不优先的顺序</p>
+<p>元素选择器，类和伪类选择器，id选择器，内联样式表，引入的样式表</p>
+<h1 id="长度单位">长度单位</h1>
+<p><strong>px</strong></p>
+<p>像素</p>
+<p><strong>百分比</strong></p>
+<p>注意，父元素内的子元素可以用百分比直接设置可能会比较省事</p>
+<p><strong>em</strong></p>
+<p>几个em就是几个<code>font-size</code>的长度。浏览器一般默认是16个像素</p>
+<p>注意，在一个CSS选择器中更改了<code>font-size</code>的值后，同一个选择器中的em会改变，并不影响其它选择器中的数值。当然在<code>body</code>这种地方修改的话相当于全局都变了，因为可以继承。不过也可以具体方块再重新设置不同的值</p>
+<pre><code>&lt;style&gt;
+    body{
+        font-size: 100px;
+    }
+    #abc{
+        font-size: 500px;
+        width: 1em;
+        height: 1em;
+        background-color: aqua;
+    }
+&lt;/style&gt;</code></pre>
+<p><strong>rem</strong></p>
+<p>和em一样，但是这个只参照于<code>&lt;html&gt;</code>标签中的<code>font-size</code>的长度。在方块内再设置<code>font-size</code>没用</p>
+<h1 id="颜色">颜色</h1>
+<p>rgb和rgba都比较熟悉了，还有个hsl和hsla</p>
+<pre><code>hsl(0,0,0)    hsla(0,0,0,0.5)</code></pre>
+<p>取值范围是百分之百或者0到360</p>
+<h1 id="阴影">阴影</h1>
+<p>向div元素添加阴影</p>
+<pre><code>box-shadow: 10px 10px 5px #888888;</code></pre>
+<p>分别是阴影向右偏移的距离（负值就是向左了），向下便宜的距离，阴影扩散的大小 阴影的颜色</p>
+</body>
+</html>

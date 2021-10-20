@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>导航页面</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="{{ url_for('static', filename='common/jquery-3.6.0.min.js', _external=True) }}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".b2").each(function () {
+                a = $(this).height()
+                b = $('.b2-2', this).height()
+                c = parseInt((a - b) / 2)
+                $('.b2-2', this).css({'margin-top': c, 'margin-bottom': c, color: 'black'})
+            });
+
+            $('body').on("mouseenter",'.b2', function () {
+                $('.b2-1', this).show()
+            })
+            $('body').on('mouseleave','.b2',function () {
+                $('.b2-1', this).hide()
+            })
+            $('#bt1').on('click', function () {
+                language_code = 1
+                $.ajax({
+                    url: '{{ url_for('index.index2') }}',
+                    type: 'post',
+                    data: {'a': language_code},
+                    success: function (data) {
+                        $('.cmy').html(data)
+                        $(".b2").each(function () {
+                            a = $(this).height()
+                            b = $('.b2-2', this).height()
+                            c = parseInt((a - b) / 2)
+                            $('.b2-2', this).css({'margin-top': c, 'margin-bottom': c, color: 'black'})
+                        });
+
+                    },
+                    error: function () {
+                        console.log('发生故障')
+                    }
+                })
+            })
+            $('#bt2').on('click', function () {
+                language_code = 2
+                $.ajax({
+                    url: '{{ url_for('index.index2') }}',
+                    type: 'post',
+                    data: {'a': language_code},
+                    success: function (data) {
+                        $('.cmy').html(data);
+                        $(".b2").each(function () {
+                            a = $(this).height()
+                            b = $('.b2-2', this).height()
+                            c = parseInt((a - b) / 2)
+                            $('.b2-2', this).css({'margin-top': c, 'margin-bottom': c, color: 'black'})
+                        });
+                    },
+                    error: function () {
+                        console.log('发生故障')
+                    }
+                })
+            })
+        });
+    </script>
+</head>
+
+<body>
+<div class="button">
+<button id="bt1">中文</button>
+<button id="bt2">日本語</button>
+</div>
+<div class="cmy">
+    {% include 'index-cn.html' %}
+</div>
+</body>
+</html>

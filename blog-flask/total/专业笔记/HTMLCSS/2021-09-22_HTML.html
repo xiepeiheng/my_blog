@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>2021-09-22_HTML</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="data:text/css,html%20%7Bline%2Dheight%3A%201%2E5%3Bfont%2Dfamily%3A%20Georgia%2C%20serif%3Bfont%2Dsize%3A%2020px%3Bcolor%3A%20%231a1a1a%3B%7Dbody%20%7Bmargin%3A%200%20auto%3Bmax%2Dwidth%3A%2040em%3Bpadding%2Dleft%3A%2050px%3Bpadding%2Dright%3A%2050px%3Bpadding%2Dtop%3A%2050px%3Bpadding%2Dbottom%3A%2050px%3Bhyphens%3A%20auto%3Bword%2Dwrap%3A%20break%2Dword%3Btext%2Drendering%3A%20optimizeLegibility%3Bfont%2Dkerning%3A%20normal%3Bfont%2Dfamily%3A%20%27Microsoft%20YaHei%27%3B%7D%40media%20%28max%2Dwidth%3A%20800px%29%20%7Bbody%20%7Bfont%2Dsize%3A%200%2E9em%3Bpadding%3A%201em%3B%7D%7D%40media%20print%20%7Bbody%20%7Bbackground%2Dcolor%3A%20transparent%3Bcolor%3A%20black%3Bfont%2Dsize%3A%2012pt%3B%7Dp%2C%20h2%2C%20h3%20%7Borphans%3A%203%3Bwidows%3A%203%3B%7Dh2%2C%20h3%2C%20h4%20%7Bpage%2Dbreak%2Dafter%3A%20avoid%3B%7D%7Dp%20%7Bmargin%3A%201em%200%3B%7Da%20%7Bcolor%3A%20%231a1a1a%3B%7Da%3Avisited%20%7Bcolor%3A%20%231a1a1a%3B%7Dimg%20%7Bmax%2Dwidth%3A%20100%25%3B%7Dh1%2C%20h2%2C%20h3%2C%20h4%2C%20h5%2C%20h6%20%7Bmargin%2Dtop%3A%201%2E4em%3B%7Dh5%2C%20h6%20%7Bfont%2Dsize%3A%201em%3Bfont%2Dstyle%3A%20italic%3B%7Dh6%20%7Bfont%2Dweight%3A%20normal%3B%7Dol%2C%20ul%20%7Bpadding%2Dleft%3A%201%2E7em%3Bmargin%2Dtop%3A%201em%3B%7Dli%20%3E%20ol%2C%20li%20%3E%20ul%20%7Bmargin%2Dtop%3A%200%3B%7Dblockquote%20%7Bmargin%3A%201em%200%201em%201%2E7em%3Bpadding%2Dleft%3A%201em%3Bborder%2Dleft%3A%203px%20solid%20%23e6e6e6%3Bcolor%3A%20%23606060%3B%7Dcode%7Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bfont%2Dsize%3A%2090%25%3Bmargin%3A%200%203px%3Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3B%7Dpre%20%7Bbackground%2Dcolor%3A%20rgb%28248%2C%20248%2C%20248%29%3Bfont%2Dfamily%3A%20Menlo%2C%20Monaco%2C%20%27Lucida%20Console%27%2C%20Consolas%2C%20monospace%3Bmargin%3A%201em%200%3Boverflow%3A%20auto%3Bborder%3A%202px%20solid%20rgb%28231%2C%20234%2C%20237%29%3Bborder%2Dradius%3A%2010px%3Bpadding%3A%2020px%3B%7Dpre%20code%20%7Bpadding%3A%200%3Boverflow%3A%20visible%3B%7D%2EsourceCode%20%7Bbackground%2Dcolor%3A%20transparent%3Boverflow%3A%20visible%3B%7Dhr%20%7Bbackground%2Dcolor%3A%20%231a1a1a%3Bborder%3A%20none%3Bheight%3A%201px%3Bmargin%3A%201em%200%3B%7Dtable%20%7Bmargin%3A%201em%200%3Bborder%2Dcollapse%3A%20collapse%3Bwidth%3A%20100%25%3Boverflow%2Dx%3A%20auto%3Bdisplay%3A%20block%3Bfont%2Dvariant%2Dnumeric%3A%20lining%2Dnums%20tabular%2Dnums%3B%7Dtable%20caption%20%7Bmargin%2Dbottom%3A%200%2E75em%3B%7Dtbody%20%7Bmargin%2Dtop%3A%200%2E5em%3Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bborder%2Dbottom%3A%201px%20solid%20%231a1a1a%3B%7Dth%20%7Bborder%2Dtop%3A%201px%20solid%20%231a1a1a%3Bpadding%3A%200%2E25em%200%2E5em%200%2E25em%200%2E5em%3B%7Dtd%20%7Bpadding%3A%200%2E125em%200%2E5em%200%2E25em%200%2E5em%3B%7Dheader%20%7Bmargin%2Dbottom%3A%204em%3Btext%2Dalign%3A%20center%3B%7D%23TOC%20li%20%7Blist%2Dstyle%3A%20none%3B%7D%23TOC%20a%3Anot%28%3Ahover%29%20%7Btext%2Ddecoration%3A%20none%3B%7Dcode%7Bwhite%2Dspace%3A%20pre%2Dwrap%3B%7Dspan%2Esmallcaps%7Bfont%2Dvariant%3A%20small%2Dcaps%3B%7Dspan%2Eunderline%7Btext%2Ddecoration%3A%20underline%3B%7Ddiv%2Ecolumn%7Bdisplay%3A%20inline%2Dblock%3B%20vertical%2Dalign%3A%20top%3B%20width%3A%2050%25%3B%7Ddiv%2Ehanging%2Dindent%7Bmargin%2Dleft%3A%201%2E5em%3B%20text%2Dindent%3A%20%2D1%2E5em%3B%7Dul%2Etask%2Dlist%7Blist%2Dstyle%3A%20none%3B%7D%2Edisplay%2Emath%7Bdisplay%3A%20block%3B%20text%2Dalign%3A%20center%3B%20margin%3A%200%2E5rem%20auto%3B%7D" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="实体">实体</h1>
+<p>在网页中，诸如大于号，小于号和空格（如果想要打多个空格的话）等等符号对应了专门的字符来表示，这就叫实体。</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">显示结果</th>
+<th style="text-align: left;">描述</th>
+<th style="text-align: left;">实体名称</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">空格</td>
+<td style="text-align: left;"><code>&amp;nbsp;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&lt;</td>
+<td style="text-align: left;">小于号</td>
+<td style="text-align: left;"><code>&amp;lt;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">&gt;</td>
+<td style="text-align: left;">大于号</td>
+<td style="text-align: left;"><code>&amp;gt;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">&amp;</td>
+<td style="text-align: left;">和号</td>
+<td style="text-align: left;"><code>&amp;amp;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">”</td>
+<td style="text-align: left;">引号</td>
+<td style="text-align: left;"><code>&amp;quot;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">’</td>
+<td style="text-align: left;">撇号</td>
+<td style="text-align: left;"><code>&amp;apos;</code>(IE不支持)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">￠</td>
+<td style="text-align: left;">分（cent）</td>
+<td style="text-align: left;"><code>&amp;cent;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">£</td>
+<td style="text-align: left;">镑（pound）</td>
+<td style="text-align: left;"><code>&amp;pound;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">¥</td>
+<td style="text-align: left;">元（yen）</td>
+<td style="text-align: left;"><code>&amp;yen;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">€</td>
+<td style="text-align: left;">欧元（euro）</td>
+<td style="text-align: left;"><code>&amp;euro;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">§</td>
+<td style="text-align: left;">小节</td>
+<td style="text-align: left;"><code>&amp;sect;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">©</td>
+<td style="text-align: left;">版权（copyright）</td>
+<td style="text-align: left;"><code>&amp;copy;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">®</td>
+<td style="text-align: left;">注册商标</td>
+<td style="text-align: left;"><code>&amp;reg;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">™</td>
+<td style="text-align: left;">商标</td>
+<td style="text-align: left;"><code>&amp;trade;</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">×</td>
+<td style="text-align: left;">乘号</td>
+<td style="text-align: left;"><code>&amp;times;</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">÷</td>
+<td style="text-align: left;">除号</td>
+<td style="text-align: left;"><code>&amp;divide;</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="meta标签">meta标签</h1>
+<p>想要让你的网站被搜素引擎收录那就需要增设这个标签</p>
+<pre><code>&lt;head&gt;
+&lt;meta name=&quot;description&quot; content=&quot;免费在线教程&quot;&gt;
+&lt;meta name=&quot;keywords&quot; content=&quot;HTML,CSS,XML,JavaScript&quot;&gt;
+&lt;meta name=&quot;author&quot; content=&quot;runoob&quot;&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;/head&gt;</code></pre>
+<p><font color="red"><strong>以及这里可以增加一些设置便于移动端体验优化，具体内容等之后学习</strong></font></p>
+<h1 id="用于文字内容的标签">用于文字内容的标签</h1>
+<h2 id="h1标签">h1标签</h2>
+<p><strong>块元素</strong></p>
+<p>表示标题，一共有六级</p>
+<h2 id="p标签">p标签</h2>
+<p><strong>块元素</strong></p>
+<p>表示一个段落</p>
+<h2 id="em标签">em标签</h2>
+<p><strong>行内元素</strong></p>
+<p>标签中的内容会倾斜表示此处重音朗读</p>
+<h2 id="strong标签">strong标签</h2>
+<p><strong>行内元素</strong></p>
+<p>标签中的内容会加粗</p>
+<h2 id="blockquote标签">blockquote标签</h2>
+<p><strong>块元素</strong></p>
+<p>表示引用，标签内的内容会单独占据一个段落并开头空两个字</p>
+<h2 id="q标签">q标签</h2>
+<p><strong>行内元素</strong></p>
+<p>表示引用，会自动为标签内的内容加上双引号</p>
+<h2 id="span标签">span标签</h2>
+<h1 id="块元素和行内元素">块元素和行内元素</h1>
+<p><code>&lt;p&gt;</code>中不能放任何块元素。行内元素不要放块元素</p>
+<h1 id="语义化标签">语义化标签</h1>
+<p>直接在标签名称中写明这个标签内写什么内容。当然自己可以随意写任意名字的标签</p>
+<p>以下标签是标准中提供的布局标签</p>
+<pre><code>&lt;header&gt;&lt;/header&gt; //头部
+&lt;main&gt;&lt;/main&gt;   //主体部分
+&lt;footer&gt;&lt;/footer&gt;  //底部
+
+&lt;nav&gt;&lt;/nav&gt; //导航栏
+&lt;aside&gt;&lt;/aside&gt; //侧边栏 不光是导航侧边栏，侧边长条一栏均可指示
+&lt;section&gt;&lt;/section&gt; //部分</code></pre>
+<p>当然这些都所谓直接用<code>&lt;div&gt;</code>就行。指示用了后更直观一点</p>
+<h1 id="列表">列表</h1>
+<p><strong>有序列表</strong></p>
+<p>会出现<code>1,2,3</code>的编号</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ol&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>123<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>123<span class="kw">&lt;/li&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/ol&gt;</span></span></code></pre></div>
+<p><strong>无序列表</strong></p>
+<p>会出现<code>·</code>的符号。去除方法<code>list-style-type:none</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ul&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;&lt;/li&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;&lt;/li&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/ul&gt;</span></span></code></pre></div>
+<p><strong>定义列表</strong></p>
+<p>不学</p>
+<h1 id="a标签">a标签</h1>
+<p><strong>行内元素</strong></p>
+<p>表示链接，唯独不能嵌套它自己</p>
+<p>可以写网页地址，相对地址，网页内的<code>id</code>元素</p>
+<pre><code>&lt;a href=&quot;https://www.bilibili.com/&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#abc&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#&quot;&gt;&lt;/a&gt; //回到页面顶部
+&lt;a href=&quot;../abc.html&quot;&gt;&lt;/a&gt;</code></pre>
+<p>其中包含的属性</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://www.bilibili.com/&quot;</span> <span class="er">target</span><span class="ot">=</span><span class="st">&quot;_self&quot;</span><span class="kw">&gt;&lt;/a&gt;</span> //默认值，在当前页面打开页面</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>_blank //在新页面打开页面</span></code></pre></div>
+<h1 id="属性">属性</h1>
+<h2 id="id">id</h2>
+<p>任何标签都可以添加该属性。并且在同一页面中该属性的值不能重复</p>
+<h1 id="img标签">img标签</h1>
+<p><strong>行内块元素</strong></p>
+<pre><code>&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;  
+部分浏览器在图片加载不成功时会显示alt元素中的内容
+直接把图片转换为base64格式的数据后贴在src里面也行</code></pre>
+<p>不要在标签里对图片进行缩放，直接预先将图片处理好</p>
+<h1 id="iframe标签">iframe标签</h1>
+<p>在一个网站中引入别的网站，几乎不用。如果一个网页中存在这个标签那么搜索引擎就不再会爬取它</p>
+<h1 id="audio与video标签">audio与video标签</h1>
+<p>会引入一个播放条用来播放音乐</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;audio</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;../abc.mp3&quot;</span> <span class="er">controls</span><span class="kw">&gt;&lt;/audio&gt;</span> //必须写controls才能由用户控制播放</span></code></pre></div>
+<p><strong>想嵌入一个B站等平台的视频进网页建议直接视频下面点击分享复制嵌入代码即可</strong></p>
+</body>
+</html>
